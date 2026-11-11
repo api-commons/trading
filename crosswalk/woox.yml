@@ -1,0 +1,39 @@
+provider: woox
+apis_io: https://apis.io/providers/woox/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - order
+    - orders
+    properties:
+      id:
+      - orderId
+      - clientOrderId
+      type: type
+      quantity:
+      - quantity
+      - amount
+      price: price
+      side: side
+      symbol: symbol
+      created_at: timestamp
+      reduce_only: reduceOnly
+    core_coverage: 0.778
+    evidence:
+    - openapi/_original/woox-openapi.json#DELETE /v3/trade/order
+    - openapi/_original/woox-openapi.json#DELETE /v3/trade/orders
+    - openapi/_original/woox-openapi.json#GET /v3/trade/order
+    - openapi/_original/woox-openapi.json#GET /v3/trade/orders
+    - openapi/_original/woox-openapi.json#POST /v3/trade/order
+  position:
+    path_segment:
+    - positions
+    properties:
+      symbol: symbol
+      created_at: timestamp
+      current_price: markPrice
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/woox-openapi.json#GET /v3/futures/positions

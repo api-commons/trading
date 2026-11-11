@@ -1,0 +1,98 @@
+context: trading
+name: Trading
+intro: >-
+  The common trading vocabulary -- the brokerage accounts that trade, the orders they place,
+  the fills that execute them, the positions they hold, the portfolios and watchlists that
+  organise them -- distilled from the APIs that already exist. Market prices belong to the
+  market-data context.
+tags: [Trading, Brokerage, Investing, Crypto Exchange, Online Brokerage, Algorithmic Trading, Wealth Management, Investment Platform]
+
+envelope: [_links, _pagination, _results, data, success, errors, warnings, count, total, page, meta, links,
+           value, results, next, previous, has_more, message, status_code, ids, next_page, previous_page,
+           page_info, cursor, total_count, per_page, total_pages, current_page, object, url, request_id, status]
+
+common_fields:
+  id: [uuid, guid, object_id, record_id, client_order_id, order_id, account_id]
+  created_at: [created, created_date, date_created, create_time, creation_date, created_on, submitted_at, entered_time, timestamp, time]
+  updated_at: [updated, updated_date, modified_at, last_modified, date_modified, update_time, modified_date, modified, update_timestamp]
+  symbol: [ticker, instrument, instrument_id, sym, pair, product_id, asset, security, figi, isin, contract]
+  account_id: [account, account_number, portfolio_id, sub_account_id, wallet_id]
+  quantity: [qty, size, amount, shares, units, orig_qty, volume, base_size]
+  price: [limit_price, px, rate, avg_price]
+  side: [direction, action, buy_sell, order_side, instruction]
+  currency: [currency_code, quote_currency]
+
+concepts:
+  trade_order:
+    path: /trade-orders
+    segments: [orders, order, trade_orders, open_orders, openorders, order_list]
+    requires: [position]
+    aliases:
+      type: [order_type, ord_type, kind]
+      time_in_force: [tif, duration, timeinforce, expiry_type]
+      stop_price: [stop, trigger_price, stop_px, aux_price]
+      filled_quantity: [filled_qty, executed_qty, cum_qty, filled_size, filled_amount, cumulative_quantity]
+      average_fill_price: [filled_avg_price, avg_fill_price, average_price, avg_px, executed_price]
+      status: [state, order_status, ord_status]
+  fill:
+    requires: [position]
+    segments: [fills, fill, executions, execution, trades@accounts|account|orders|my|user|portfolio, mytrades, my_trades, transactions@trading|orders, activities@trading|account]
+    aliases:
+      order_id: [order, client_order_id, orderid]
+      fee: [commission, fees, fee_amount, commission_amount]
+      executed_at: [trade_time, transact_time, filled_at, execution_time, time, timestamp]
+  position:
+    segments: [positions, position, holdings, holding, open_positions, portfolio_positions]
+    aliases:
+      average_cost: [avg_entry_price, cost_basis, average_price, avg_cost, entry_price, average_buy_price, book_cost]
+      market_value: [market_val, value, current_value, notional, position_value]
+      unrealized_pnl: [unrealized_pl, upnl, unrealised_pnl, unrealized_profit, pnl]
+      current_price: [last_price, mark_price, current_price_value, market_price]
+  brokerage_account:
+    path: /brokerage-accounts
+    requires: [position]
+    segments: [accounts, account, brokerage_accounts, trading_accounts, sub_accounts, subaccounts]
+    aliases:
+      account_number: [number, account_no, account_id_display]
+      type: [account_type, kind, classification]
+      buying_power: [buying_power_amount, available_funds, available_to_trade, free_margin]
+      cash: [cash_balance, available_cash, cash_available]
+      equity: [net_liquidation, portfolio_value, total_value, net_worth]
+  portfolio:
+    requires: [position]
+    segments: [portfolios, portfolio]
+    aliases:
+      total_value: [value, market_value, net_asset_value, equity]
+      return: [performance, total_return, gain, pnl]
+  watchlist:
+    requires: [position]
+    segments: [watchlists, watchlist, watch_lists, favorites@symbols|instruments]
+    aliases:
+      symbols: [assets, instruments, items, securities, tickers]
+
+exclude:
+  fill:
+    babyblueviper-com: /metrics/execution are execution-quality metrics
+duplicates:
+  arch: [arch-labs]
+  bamboo: [investbamboo-com]
+
+findings:
+  - "A trade order agrees on more than any order in the commons: side, symbol, quantity, price,
+    type, time in force and stop price are all core. Brokers and crypto exchanges inherited the
+    order ticket from FIX, and it shows."
+  - "A fill agrees just as completely -- order, price, quantity, side, symbol, execution time and
+    fee."
+  - "A position agrees on symbol and quantity; cost basis, market value and P&L are each named
+    differently by brokers, exchanges and wealth platforms."
+  - "A brokerage account agrees only on its type: buying power, cash and equity are reported by
+    every broker under its own names."
+decisions:
+  - "Orders are `/trade-orders` and accounts `/brokerage-accounts`: commerce owns `/orders` and
+    banking `/accounts`. Trading orders were excluded from commerce for exactly this reason."
+  - "Fills cover executions and an account's own trades (`myTrades`); public market trades are
+    the market-data context's."
+  - "Holdings are positions."
+  - "Orders, fills, accounts, portfolios and watchlists `require: [position]`: a provider that
+    trades holds positions, and the requirement keeps commerce's orders out."
+  - "Duplicates merged: Arch, Bamboo."

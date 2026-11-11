@@ -1,0 +1,481 @@
+openapi: 3.1.0
+info:
+  title: Trading (API Commons)
+  version: 0.1.0-draft.20261110
+  description: 'The common Trading interface, distilled from the harvested OpenAPI of 174 providers in the APIs.io
+    catalog. Not a product: no one serves this API. It is the shape the market already shares, measured, so that
+    providers, agents and integrators can map to one vocabulary. See profile.yml.'
+  license:
+    name: CC BY-NC-SA 4.0
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+paths:
+  /trade-orders:
+    get:
+      operationId: listTradeOrders
+      summary: List trade orders
+      tags:
+      - Trade Orders
+      x-commons-tier: core
+      x-commons-share: 0.921
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: &id001
+                  $ref: '#/components/schemas/TradeOrder'
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+    post:
+      operationId: createTradeOrder
+      summary: Create a trade order
+      tags:
+      - Trade Orders
+      x-commons-tier: core
+      x-commons-share: 0.921
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id001
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id001
+  /trade-orders/{trade_order_id}:
+    parameters:
+    - $ref: '#/components/parameters/trade_order_id'
+    get:
+      operationId: getTradeOrder
+      summary: Get a trade order
+      tags:
+      - Trade Orders
+      x-commons-tier: core
+      x-commons-share: 0.711
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id001
+    delete:
+      operationId: deleteTradeOrder
+      summary: Delete a trade order
+      tags:
+      - Trade Orders
+      x-commons-tier: core
+      x-commons-share: 0.553
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id001
+    patch:
+      operationId: updateTradeOrder
+      summary: Update a trade order
+      tags:
+      - Trade Orders
+      x-commons-tier: extended
+      x-commons-share: 0.342
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id001
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id001
+  /fills:
+    get:
+      operationId: listFills
+      summary: List fills
+      tags:
+      - Fills
+      x-commons-tier: core
+      x-commons-share: 0.944
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Fill'
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+  /positions:
+    get:
+      operationId: listPositions
+      summary: List positions
+      tags:
+      - Positions
+      x-commons-tier: core
+      x-commons-share: 0.902
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: &id002
+                  $ref: '#/components/schemas/Position'
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+  /positions/{position_id}:
+    parameters:
+    - $ref: '#/components/parameters/position_id'
+    get:
+      operationId: getPosition
+      summary: Get a position
+      tags:
+      - Positions
+      x-commons-tier: extended
+      x-commons-share: 0.255
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id002
+  /brokerage-accounts:
+    get:
+      operationId: listBrokerageAccounts
+      summary: List brokerage accounts
+      tags:
+      - Brokerage Accounts
+      x-commons-tier: core
+      x-commons-share: 0.923
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: &id003
+                  $ref: '#/components/schemas/BrokerageAccount'
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+    post:
+      operationId: createBrokerageAccount
+      summary: Create a brokerage account
+      tags:
+      - Brokerage Accounts
+      x-commons-tier: extended
+      x-commons-share: 0.436
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id003
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id003
+  /brokerage-accounts/{brokerage_account_id}:
+    parameters:
+    - $ref: '#/components/parameters/brokerage_account_id'
+    get:
+      operationId: getBrokerageAccount
+      summary: Get a brokerage account
+      tags:
+      - Brokerage Accounts
+      x-commons-tier: core
+      x-commons-share: 0.564
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id003
+    patch:
+      operationId: updateBrokerageAccount
+      summary: Update a brokerage account
+      tags:
+      - Brokerage Accounts
+      x-commons-tier: extended
+      x-commons-share: 0.308
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id003
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id003
+  /portfolios:
+    get:
+      operationId: listPortfolios
+      summary: List portfolios
+      tags:
+      - Portfolios
+      x-commons-tier: core
+      x-commons-share: 1.0
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: &id004
+                  $ref: '#/components/schemas/Portfolio'
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+    post:
+      operationId: createPortfolio
+      summary: Create a portfolio
+      tags:
+      - Portfolios
+      x-commons-tier: core
+      x-commons-share: 0.714
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id004
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id004
+  /portfolios/{portfolio_id}:
+    parameters:
+    - $ref: '#/components/parameters/portfolio_id'
+    get:
+      operationId: getPortfolio
+      summary: Get a portfolio
+      tags:
+      - Portfolios
+      x-commons-tier: core
+      x-commons-share: 0.857
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id004
+    delete:
+      operationId: deletePortfolio
+      summary: Delete a portfolio
+      tags:
+      - Portfolios
+      x-commons-tier: extended
+      x-commons-share: 0.429
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id004
+    patch:
+      operationId: updatePortfolio
+      summary: Update a portfolio
+      tags:
+      - Portfolios
+      x-commons-tier: extended
+      x-commons-share: 0.429
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id004
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id004
+  /watchlists:
+    get:
+      operationId: listWatchlists
+      summary: List watchlists
+      tags:
+      - Watchlists
+      x-commons-tier: core
+      x-commons-share: 1.0
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: &id005
+                  $ref: '#/components/schemas/Watchlist'
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+    post:
+      operationId: createWatchlist
+      summary: Create a watchlist
+      tags:
+      - Watchlists
+      x-commons-tier: core
+      x-commons-share: 1.0
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id005
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id005
+  /watchlists/{watchlist_id}:
+    parameters:
+    - $ref: '#/components/parameters/watchlist_id'
+    delete:
+      operationId: deleteWatchlist
+      summary: Delete a watchlist
+      tags:
+      - Watchlists
+      x-commons-tier: core
+      x-commons-share: 0.875
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id005
+    get:
+      operationId: getWatchlist
+      summary: Get a watchlist
+      tags:
+      - Watchlists
+      x-commons-tier: core
+      x-commons-share: 0.875
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id005
+    patch:
+      operationId: updateWatchlist
+      summary: Update a watchlist
+      tags:
+      - Watchlists
+      x-commons-tier: core
+      x-commons-share: 0.5
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id005
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id005
+components:
+  schemas:
+    TradeOrder:
+      $ref: ./schema/trade_order.json
+    Fill:
+      $ref: ./schema/fill.json
+    Position:
+      $ref: ./schema/position.json
+    BrokerageAccount:
+      $ref: ./schema/brokerage_account.json
+    Portfolio:
+      $ref: ./schema/portfolio.json
+    Watchlist:
+      $ref: ./schema/watchlist.json
+  parameters:
+    trade_order_id:
+      name: trade_order_id
+      in: path
+      required: true
+      schema:
+        type: string
+    fill_id:
+      name: fill_id
+      in: path
+      required: true
+      schema:
+        type: string
+    position_id:
+      name: position_id
+      in: path
+      required: true
+      schema:
+        type: string
+    brokerage_account_id:
+      name: brokerage_account_id
+      in: path
+      required: true
+      schema:
+        type: string
+    portfolio_id:
+      name: portfolio_id
+      in: path
+      required: true
+      schema:
+        type: string
+    watchlist_id:
+      name: watchlist_id
+      in: path
+      required: true
+      schema:
+        type: string

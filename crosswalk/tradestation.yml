@@ -1,0 +1,46 @@
+provider: tradestation
+apis_io: https://apis.io/providers/tradestation/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - orders
+    properties:
+      id: OrderID
+      type: OrderType
+      quantity: Quantity
+      price: LimitPrice
+      side: Side
+      symbol: Symbol
+      time_in_force: TimeInForce
+      stop_price: StopPrice
+      account_id: AccountID
+      filled_quantity: FilledQuantity
+    core_coverage: 0.889
+    evidence:
+    - openapi/_original/tradestation-api-openapi.yml#DELETE /v3/orderexecution/orders/{orderId}
+    - openapi/_original/tradestation-api-openapi.yml#GET /v3/brokerage/accounts/{accountIds}/orders
+    - openapi/_original/tradestation-api-openapi.yml#POST /v3/orderexecution/orders
+    - openapi/_original/tradestation-api-openapi.yml#PUT /v3/orderexecution/orders/{orderId}
+  position:
+    path_segment:
+    - positions
+    properties:
+      quantity: Quantity
+      symbol: Symbol
+      average_cost: AveragePrice
+      account_id: AccountID
+      market_value: MarketValue
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/tradestation-api-openapi.yml#GET /v3/brokerage/accounts/{accountIds}/positions
+  brokerage_account:
+    path_segment:
+    - accounts
+    properties:
+      type: AccountType
+      account_id: AccountID
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/tradestation-api-openapi.yml#GET /v3/brokerage/accounts

@@ -1,0 +1,36 @@
+provider: interactive-brokers
+apis_io: https://apis.io/providers/interactive-brokers/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - orders
+    properties:
+      id: order_id
+      type: orderType
+      quantity: quantity
+      price: price
+      side: side
+      time_in_force: tif
+      status: order_status
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/interactive-brokers-web-api-openapi.yml#GET /iserver/account/orders
+    - openapi/_original/interactive-brokers-web-api-openapi.yml#POST /iserver/account/{accountId}/orders
+  position:
+    path_segment:
+    - positions
+    properties:
+      average_cost: avgCost
+      unrealized_pnl: unrealizedPnl
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/interactive-brokers-web-api-openapi.yml#GET /portfolio/{accountId}/positions/{pageId}
+  brokerage_account:
+    path_segment:
+    - accounts
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/interactive-brokers-web-api-openapi.yml#GET /iserver/accounts

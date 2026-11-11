@@ -1,0 +1,69 @@
+provider: ondo-finance
+apis_io: https://apis.io/providers/ondo-finance/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - orders
+    - order
+    properties:
+      id:
+      - orderId
+      - clientOrderId
+      type: type
+      quantity: size
+      price: price
+      side: side
+      time_in_force: timeInForce
+      created_at: createdAt
+      stop_price: triggerPrice
+      filled_quantity: filledSize
+      reduce_only: reduceOnly
+      status: orderStatus
+      post_only: postOnly
+    core_coverage: 0.889
+    evidence:
+    - openapi/_original/ondo-finance-perps-openapi-original.json#DELETE /v1/perps/orders
+    - openapi/_original/ondo-finance-perps-openapi-original.json#DELETE /v1/perps/orders/batch
+    - openapi/_original/ondo-finance-perps-openapi-original.json#DELETE /v1/perps/orders/{orderID}
+    - openapi/_original/ondo-finance-perps-openapi-original.json#DELETE /v1/perps/twap/order/{orderID}
+    - openapi/_original/ondo-finance-perps-openapi-original.json#GET /v1/counts/orders
+  fill:
+    path_segment:
+    - fills
+    properties:
+      order_id:
+      - orderId
+      - clientOrderId
+      price: price
+      id: id
+      quantity: size
+      side:
+      - side
+      - direction
+      executed_at: time
+      fee: fee
+    core_coverage: 0.875
+    evidence:
+    - openapi/_original/ondo-finance-perps-openapi-original.json#GET /v1/perps/fills
+    - openapi/_original/ondo-finance-perps-openapi-original.json#GET /v1/perps/orders/{orderID}/fills
+    - openapi/_original/ondo-finance-perps-openapi-original.json#GET /v1/perps/twap/order/{orderID}/fills
+  position:
+    path_segment:
+    - positions
+    properties:
+      current_price: markPrice
+      unrealized_pnl: unrealizedPnl
+      side: direction
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/ondo-finance-perps-openapi-original.json#GET /v1/perps/positions
+  brokerage_account:
+    path_segment:
+    - account
+    properties:
+      account_id: accountID
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/ondo-finance-perps-openapi-original.json#GET /v1/account

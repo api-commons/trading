@@ -1,0 +1,78 @@
+provider: evedex
+apis_io: https://apis.io/providers/evedex/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - order
+    properties:
+      id:
+      - id
+      - orderId
+      type:
+      - type
+      - orderType
+      quantity:
+      - quantity
+      - amount
+      price:
+      - limitPrice
+      - price
+      side: side
+      symbol: instrument
+      time_in_force: timeInForce
+      created_at: createdAt
+      stop_price: stopPrice
+      average_fill_price: filledAvgPrice
+      updated_at: updatedAt
+      status: state
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/evedex-ai-strategies-openapi.json#GET /api/order
+    - openapi/_original/evedex-exchange-openapi.json#DELETE /api/order/{orderId}
+    - openapi/_original/evedex-exchange-openapi.json#GET /api/ai-strategy/order
+    - openapi/_original/evedex-exchange-openapi.json#GET /api/order
+    - openapi/_original/evedex-exchange-openapi.json#GET /api/order/{orderId}
+  fill:
+    path_segment:
+    - fill
+    properties:
+      order_id: order
+      id: id
+      symbol: instrument
+      fee: fee
+      created_at: createdAt
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/evedex-exchange-openapi.json#GET /api/fill
+    - openapi/_original/evedex-exchange-openapi.json#GET /api/order/{orderId}/fill
+  position:
+    path_segment:
+    - position
+    properties:
+      quantity: quantity
+      symbol: instrument
+      id: id
+      created_at: createdAt
+      side: side
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/evedex-ai-strategies-openapi.json#GET /api/position
+    - openapi/_original/evedex-exchange-openapi.json#GET /api/position
+    - openapi/_original/evedex-exchange-openapi.json#PUT /api/position/{instrument}
+  brokerage_account:
+    path_segment:
+    - account
+    properties:
+      type: accountType
+      id: id
+      created_at: createdAt
+      name: name
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/evedex-academy-openapi.json#POST /api/user/account
+    - openapi/_original/evedex-backoffice-openapi.json#GET /api/trading-platform/account
+    - openapi/_original/evedex-backoffice-openapi.json#POST /api/hedging/bybit/account
+    - openapi/_original/evedex-backoffice-openapi.json#POST /api/hedging/finery/account
+    - openapi/_original/evedex-backoffice-openapi.json#POST /api/trading-platform/account

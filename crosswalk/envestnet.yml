@@ -1,0 +1,39 @@
+provider: envestnet
+apis_io: https://apis.io/providers/envestnet/
+context: trading
+generated: '2026-11-10'
+concepts:
+  position:
+    path_segment:
+    - holdings
+    properties:
+      quantity: quantity
+      symbol:
+      - symbol
+      - isin
+      average_cost: costBasis
+      account_id: accountId
+      id: id
+      created_at: createdDate
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/envestnet-account-aggregation-openapi-original.yml#GET /holdings
+    - openapi/_original/envestnet-account-aggregation-openapi-original.yml#POST /holdings
+  brokerage_account:
+    path_segment:
+    - accounts
+    - account
+    properties:
+      type:
+      - classification
+      - accountType
+      id: id
+      created_at: createdDate
+      account_number: accountNumber
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/envestnet-account-aggregation-openapi-original.yml#DELETE /accounts/{accountId}
+    - openapi/_original/envestnet-account-aggregation-openapi-original.yml#GET /accounts
+    - openapi/_original/envestnet-account-aggregation-openapi-original.yml#GET /accounts/{accountId}
+    - openapi/_original/envestnet-account-aggregation-openapi-original.yml#POST /accounts
+    - openapi/_original/envestnet-account-aggregation-openapi-original.yml#PUT /accounts/{accountId}

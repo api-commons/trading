@@ -1,0 +1,41 @@
+provider: temenos
+apis_io: https://apis.io/providers/temenos/
+context: trading
+generated: '2026-11-10'
+concepts:
+  position:
+    path_segment:
+    - positions
+    properties:
+      quantity: quantity
+      id: positionId
+      market_value: marketValue
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/temenos-fund-administration-openapi.yml#GET /holdings/positions
+  brokerage_account:
+    path_segment:
+    - accounts
+    properties:
+      type: accountType
+      name: name
+      account_id: accountId
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/temenos-cloud-banking-openapi.yml#GET /accounts
+    - openapi/_original/temenos-cloud-banking-openapi.yml#POST /accounts
+    - openapi/_original/temenos-data-hub-openapi.yml#GET /analytics/accounts
+    - openapi/_original/temenos-data-hub-openapi.yml#GET /operational/accounts
+    - openapi/_original/temenos-infinity-openapi.yml#GET /accounts
+  portfolio:
+    path_segment:
+    - portfolios
+    properties:
+      account_id: portfolioId
+      currency: currency
+    core_coverage: 0.333
+    evidence:
+    - openapi/_original/temenos-wealth-openapi.yml#DELETE /holdings/portfolios/{portfolioId}
+    - openapi/_original/temenos-wealth-openapi.yml#GET /holdings/portfolios
+    - openapi/_original/temenos-wealth-openapi.yml#GET /holdings/portfolios/{portfolioId}
+    - openapi/_original/temenos-wealth-openapi.yml#POST /holdings/portfolios

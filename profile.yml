@@ -1,0 +1,1050 @@
+context: trading
+name: Trading
+generated: '2026-11-10'
+version: 0.1.0-draft.20261110
+status: draft
+cohort:
+  tags:
+  - Trading
+  - Brokerage
+  - Investing
+  - Crypto Exchange
+  - Online Brokerage
+  - Algorithmic Trading
+  - Wealth Management
+  - Investment Platform
+  providers_with_harvested_openapi: 174
+thresholds:
+  core: 0.5
+  extended: 0.2
+  min_providers: 3
+excluded:
+  fill:
+    babyblueviper-com: /metrics/execution are execution-quality metrics
+duplicates:
+  arch:
+  - arch-labs
+  bamboo:
+  - investbamboo-com
+shared_specs: {}
+concepts:
+  trade_order:
+    segments_seen:
+      orders: 36
+      order: 12
+      open_orders: 2
+      openorders: 1
+    providers_exposing: 38
+    providers_with_readable_schema: 36
+    operations:
+    - operation: GET collection
+      providers: 35
+      share: 0.921
+      tier: core
+    - operation: POST collection
+      providers: 35
+      share: 0.921
+      tier: core
+    - operation: GET item
+      providers: 27
+      share: 0.711
+      tier: core
+    - operation: DELETE item
+      providers: 21
+      share: 0.553
+      tier: core
+    - operation: DELETE collection
+      providers: 16
+      share: 0.421
+      tier: extended
+    - operation: UPDATE item
+      providers: 13
+      share: 0.342
+      tier: extended
+    - operation: UPDATE collection
+      providers: 7
+      share: 0.184
+      tier: long-tail
+    properties:
+    - name: id
+      tier: core
+      providers: 34
+      share: 0.944
+      type: string
+      spellings:
+      - id
+      - orderId
+      - client_order_id
+      - clientOrderId
+      - order_id
+      - orderID
+      - clientOrderID
+      - OrderId
+    - name: type
+      tier: core
+      providers: 34
+      share: 0.944
+      type: string
+      spellings:
+      - type
+      - orderType
+      - order_type
+      - OrderType
+      - ordType
+      - order-type
+    - name: quantity
+      tier: core
+      providers: 33
+      share: 0.917
+      type: string
+      spellings:
+      - quantity
+      - amount
+      - size
+      - qty
+      - origQty
+      - units
+      - shares
+      - Amount
+    - name: price
+      tier: core
+      providers: 32
+      share: 0.889
+      type: string
+      spellings:
+      - price
+      - limitPrice
+      - limit_price
+      - avgPrice
+      - rate
+      - Price
+      - LimitPrice
+    - name: side
+      tier: core
+      providers: 31
+      share: 0.861
+      type: string
+      spellings:
+      - side
+      - action
+      - orderSide
+      - instruction
+      - BuySell
+      - Side
+    - name: symbol
+      tier: core
+      providers: 28
+      share: 0.778
+      type: string
+      spellings:
+      - symbol
+      - ticker
+      - instrument_id
+      - instrument
+      - instrumentID
+      - instrumentId
+      - security
+      - product_id
+    - name: time_in_force
+      tier: core
+      providers: 27
+      share: 0.75
+      type: string
+      spellings:
+      - timeInForce
+      - time_in_force
+      - duration
+      - tif
+      - Duration
+      - time-in-force
+      - TimeInForce
+    - name: created_at
+      tier: core
+      providers: 26
+      share: 0.722
+      type: string
+      spellings:
+      - createdAt
+      - created_at
+      - timestamp
+      - submitted_at
+      - createTime
+      - time
+      - created
+      - createdDate
+    - name: stop_price
+      tier: core
+      providers: 21
+      share: 0.583
+      type: string
+      spellings:
+      - stopPrice
+      - stop_price
+      - triggerPrice
+      - trigger_price
+      - StopPrice
+    - name: account_id
+      tier: extended
+      providers: 16
+      share: 0.444
+      type: string
+      spellings:
+      - account
+      - accountId
+      - account_id
+      - portfolioId
+      - account_number
+      - accountID
+      - accountNumber
+      - AccountId
+    - name: filled_quantity
+      tier: extended
+      providers: 16
+      share: 0.444
+      type: string
+      spellings:
+      - filledQuantity
+      - cumQty
+      - cumulativeQuantity
+      - filledSize
+      - filled_quantity
+      - filled_qty
+      - executedQty
+      - FilledAmount
+    - name: average_fill_price
+      tier: extended
+      providers: 15
+      share: 0.417
+      type: number
+      spellings:
+      - averagePrice
+      - average_fill_price
+      - average_price
+      - avgPx
+      - averageFillPrice
+      - filledAvgPrice
+      - avg_fill_price
+    - name: updated_at
+      tier: extended
+      providers: 13
+      share: 0.361
+      type: string
+      spellings:
+      - updatedAt
+      - updated_at
+      - updateTime
+      - updated-at
+    - name: reduce_only
+      tier: extended
+      providers: 10
+      share: 0.278
+      type: boolean
+      spellings:
+      - reduceOnly
+      - reduce_only
+    - name: currency
+      tier: extended
+      providers: 9
+      share: 0.25
+      type: string
+      spellings:
+      - currency
+      - QuoteCurrency
+    - name: status
+      tier: extended
+      providers: 9
+      share: 0.25
+      type: string
+      spellings:
+      - orderStatus
+      - state
+      - order_status
+      - ordStatus
+    - name: post_only
+      tier: extended
+      providers: 8
+      share: 0.222
+      type: boolean
+      spellings:
+      - postOnly
+      - post_only
+    - name: user_id
+      tier: extended
+      providers: 8
+      share: 0.222
+      type: string
+      spellings:
+      - user_id
+      - userId
+      - userID
+      - user-id
+    long_tail_count: 730
+    long_tail_sample:
+    - fee
+    - leaves_quantity
+    - exchange
+    - extended_hours
+    - realized_pnl
+    - reject_reason
+    - total_fee
+    - client_id
+    - close_position
+    - created_time
+    - error
+    - executed_quantity
+    - expire_time
+    - instrument_type
+    - leverage
+    - margin_mode
+    - market
+    - notes
+    - order_price
+    - order_qty
+    - position_id
+    - remaining_quantity
+    - strategy
+    - trades
+    - trigger_price_type
+    - algo_type
+    - asset_class
+    - asset_id
+    - average_executed_price
+    - avg_filled_price
+    - broker_id
+    - cancel_order_on_pause
+    - cancel_reason
+    - cancellation_reason
+    - cancelled_at
+    - cash_amount
+    - cl_order_id
+    - commission
+    - created_by
+    - cusip
+  fill:
+    segments_seen:
+      fills: 8
+      executions: 4
+      fill: 2
+      mytrades: 2
+      trades: 2
+      activities: 1
+      transactions: 1
+    providers_exposing: 18
+    providers_with_readable_schema: 16
+    operations:
+    - operation: GET collection
+      providers: 17
+      share: 0.944
+      tier: core
+    - operation: GET item
+      providers: 3
+      share: 0.167
+      tier: long-tail
+    - operation: POST collection
+      providers: 1
+      share: 0.056
+      tier: long-tail
+    - operation: UPDATE collection
+      providers: 1
+      share: 0.056
+      tier: long-tail
+    - operation: UPDATE item
+      providers: 1
+      share: 0.056
+      tier: long-tail
+    properties:
+    - name: order_id
+      tier: core
+      providers: 15
+      share: 0.938
+      type: string
+      spellings:
+      - order_id
+      - orderId
+      - order
+      - client_order_id
+      - clientOrderId
+    - name: price
+      tier: core
+      providers: 13
+      share: 0.812
+      type: string
+      spellings:
+      - price
+      - avgPrice
+    - name: id
+      tier: core
+      providers: 12
+      share: 0.75
+      type: string
+      spellings:
+      - id
+      - fill_id
+    - name: quantity
+      tier: core
+      providers: 12
+      share: 0.75
+      type: string
+      spellings:
+      - quantity
+      - size
+      - qty
+      - amount
+    - name: symbol
+      tier: core
+      providers: 12
+      share: 0.75
+      type: string
+      spellings:
+      - symbol
+      - ticker
+      - instrument_id
+      - instrument
+      - security
+      - product_id
+    - name: side
+      tier: core
+      providers: 10
+      share: 0.625
+      type: string
+      spellings:
+      - side
+      - action
+      - direction
+    - name: executed_at
+      tier: core
+      providers: 9
+      share: 0.562
+      type: string
+      spellings:
+      - timestamp
+      - time
+      - executedAt
+      - executed_at
+      - filledAt
+      - executionTime
+    - name: fee
+      tier: core
+      providers: 9
+      share: 0.562
+      type: string
+      spellings:
+      - fee
+      - commission
+      - fees
+      - fee_amount
+    - name: created_at
+      tier: extended
+      providers: 5
+      share: 0.312
+      type: string
+      spellings:
+      - created_at
+      - createdAt
+    - name: account_id
+      tier: extended
+      providers: 4
+      share: 0.25
+      type: string
+      spellings:
+      - account
+      - account_id
+      - account_number
+      - accountId
+      - accountNumber
+    - name: trade_id
+      tier: extended
+      providers: 4
+      share: 0.25
+      type: integer
+      spellings:
+      - tradeId
+      - trade_id
+    long_tail_count: 109
+    long_tail_sample:
+    - client_id
+    - is_maker
+    - currency
+    - fee_currency
+    - fill_price
+    - fill_type
+    - is_taker
+    - market
+    - next_page_token
+    - page_number
+    - previous_page_token
+    - total_items
+    - transaction_time
+    - venue
+    - aggressor
+    - asset_id
+    - block_id
+    - book_side
+    - break
+    - broker
+    - commission_asset
+    - contribution_code_id
+    - count_fp
+    - created_time
+    - custodian_name
+    - deprecated
+    - distribution_code_id
+    - error
+    - error_code
+    - exchange
+    - exchange_index
+    - execution_venue
+    - fee_cost
+    - fee_rebate
+    - fee_symbol
+    - fill_quantity
+    - fill_role
+    - filled_cost
+    - flags
+    - fund_family_name
+  position:
+    segments_seen:
+      positions: 41
+      holdings: 11
+      position: 6
+      holding: 2
+    providers_exposing: 51
+    providers_with_readable_schema: 48
+    operations:
+    - operation: GET collection
+      providers: 46
+      share: 0.902
+      tier: core
+    - operation: GET item
+      providers: 13
+      share: 0.255
+      tier: extended
+    - operation: DELETE collection
+      providers: 5
+      share: 0.098
+      tier: long-tail
+    - operation: POST collection
+      providers: 5
+      share: 0.098
+      tier: long-tail
+    - operation: DELETE item
+      providers: 4
+      share: 0.078
+      tier: long-tail
+    - operation: UPDATE item
+      providers: 3
+      share: 0.059
+      tier: long-tail
+    - operation: POST item
+      providers: 1
+      share: 0.02
+      tier: long-tail
+    - operation: UPDATE collection
+      providers: 1
+      share: 0.02
+      tier: long-tail
+    properties:
+    - name: quantity
+      tier: core
+      providers: 32
+      share: 0.667
+      type: number
+      spellings:
+      - quantity
+      - size
+      - shares
+      - qty
+      - Amount
+      - Quantity
+    - name: symbol
+      tier: core
+      providers: 28
+      share: 0.583
+      type: string
+      spellings:
+      - symbol
+      - instrument
+      - instrument_id
+      - ticker
+      - instrumentId
+      - security
+      - isin
+      - InstrumentID
+    - name: average_cost
+      tier: extended
+      providers: 22
+      share: 0.458
+      type: number
+      spellings:
+      - costBasis
+      - entryPrice
+      - average_cost
+      - cost_basis
+      - entry_price
+      - average_price
+      - avg_entry_price
+      - avgEntryPrice
+    - name: account_id
+      tier: extended
+      providers: 20
+      share: 0.417
+      type: string
+      spellings:
+      - account
+      - account_id
+      - accountId
+      - portfolioId
+      - accountNumber
+      - account_number
+      - accountID
+      - AccountId
+    - name: id
+      tier: extended
+      providers: 20
+      share: 0.417
+      type: string
+      spellings:
+      - id
+      - positionId
+      - client_order_id
+      - orderId
+      - PositionId
+      - order-id
+    - name: created_at
+      tier: extended
+      providers: 16
+      share: 0.333
+      type: string
+      spellings:
+      - timestamp
+      - createdAt
+      - created_at
+      - createdDate
+      - created-at
+    - name: current_price
+      tier: extended
+      providers: 15
+      share: 0.312
+      type: number
+      spellings:
+      - markPrice
+      - currentPrice
+      - mark_price
+      - lastPrice
+      - market_price
+      - mark-price
+      - last_price
+    - name: unrealized_pnl
+      tier: extended
+      providers: 14
+      share: 0.292
+      type: string
+      spellings:
+      - unrealizedPnl
+      - unrealized_pnl
+      - pnl
+      - unrealized_pl
+      - unrealizedPNL
+      - unrealised_pnl
+    - name: market_value
+      tier: extended
+      providers: 13
+      share: 0.271
+      type: number
+      spellings:
+      - marketValue
+      - market_value
+      - currentValue
+      - MarketValue
+    - name: side
+      tier: extended
+      providers: 10
+      share: 0.208
+      type: string
+      spellings:
+      - side
+      - orderSide
+      - direction
+      - BuySell
+    long_tail_count: 605
+    long_tail_sample:
+    - price
+    - currency
+    - leverage
+    - updated_at
+    - liquidation_price
+    - as_of_date
+    - instrument_type
+    - security_type
+    - asset_class
+    - asset_type
+    - average_open_price
+    - bankruptcy_price
+    - closed_at
+    - closing_price
+    - expires_at
+    - name
+    - notional_value
+    - order_type
+    - page_number
+    - security_id
+    - strike_price
+    - time_in_force
+    - account_name
+    - available_quantity
+    - average_entry_price
+    - average_fill_price
+    - closing_price_date
+    - cusip
+    - daily_realized_pnl
+    - daily_unrealized_pnl
+    - daily_unrealized_pnl_pct
+    - description
+    - details
+    - error
+    - est_liq_price
+    - exchange
+    - expiration_date
+    - expiry_date
+    - extended_hours
+    - filled_quantity
+  brokerage_account:
+    segments_seen:
+      accounts: 23
+      account: 16
+      subaccounts: 5
+      sub_accounts: 1
+    providers_exposing: 39
+    providers_with_readable_schema: 38
+    operations:
+    - operation: GET collection
+      providers: 36
+      share: 0.923
+      tier: core
+    - operation: GET item
+      providers: 22
+      share: 0.564
+      tier: core
+    - operation: POST collection
+      providers: 17
+      share: 0.436
+      tier: extended
+    - operation: UPDATE item
+      providers: 12
+      share: 0.308
+      tier: extended
+    - operation: DELETE item
+      providers: 6
+      share: 0.154
+      tier: long-tail
+    - operation: POST item
+      providers: 2
+      share: 0.051
+      tier: long-tail
+    - operation: DELETE collection
+      providers: 1
+      share: 0.026
+      tier: long-tail
+    - operation: UPDATE collection
+      providers: 1
+      share: 0.026
+      tier: long-tail
+    properties:
+    - name: type
+      tier: core
+      providers: 21
+      share: 0.553
+      type: string
+      spellings:
+      - accountType
+      - type
+      - kind
+      - account_type
+      - AccountType
+      - classification
+    - name: id
+      tier: extended
+      providers: 17
+      share: 0.447
+      type: string
+      spellings:
+      - id
+    - name: created_at
+      tier: extended
+      providers: 13
+      share: 0.342
+      type: string
+      spellings:
+      - createdAt
+      - created_at
+      - createdDate
+      - timestamp
+      - CreationDate
+      - created-at
+    - name: name
+      tier: extended
+      providers: 9
+      share: 0.237
+      type: string
+      spellings:
+      - name
+    - name: account_id
+      tier: extended
+      providers: 8
+      share: 0.211
+      type: string
+      spellings:
+      - accountId
+      - account_id
+      - accountID
+      - portfolioId
+      - AccountId
+      - AccountID
+    - name: account_number
+      tier: extended
+      providers: 8
+      share: 0.211
+      type: string
+      spellings:
+      - accountNumber
+      - account_number
+      - accountNo
+      - number
+      - account-number
+    long_tail_count: 1027
+    long_tail_sample:
+    - currency
+    - account_name
+    - symbol
+    - updated_at
+    - available_balance
+    - cash
+    - current_balance
+    - leverage
+    - nickname
+    - user_id
+    - account_status
+    - account_value
+    - address
+    - buying_power
+    - close_date
+    - date_of_birth
+    - display_name
+    - email
+    - equity
+    - fees
+    - interest_rate
+    - open_date
+    - page_number
+    - phone_number
+    - quantity
+    - account_holder_entity_id
+    - active
+    - asset_id
+    - assets
+    - balance
+    - balance_as_of
+    - balances
+    - cash_value
+    - client_id
+    - country_of_tax_residency
+    - current_value
+    - customer_id
+    - description
+    - end_date
+    - entity
+  portfolio:
+    segments_seen:
+      portfolios: 6
+      portfolio: 3
+    providers_exposing: 7
+    providers_with_readable_schema: 7
+    operations:
+    - operation: GET collection
+      providers: 7
+      share: 1.0
+      tier: core
+    - operation: GET item
+      providers: 6
+      share: 0.857
+      tier: core
+    - operation: POST collection
+      providers: 5
+      share: 0.714
+      tier: core
+    - operation: DELETE item
+      providers: 3
+      share: 0.429
+      tier: extended
+    - operation: UPDATE item
+      providers: 3
+      share: 0.429
+      tier: extended
+    - operation: POST item
+      providers: 1
+      share: 0.143
+      tier: long-tail
+    properties:
+    - name: name
+      tier: core
+      providers: 5
+      share: 0.714
+      type: string
+      spellings:
+      - name
+    - name: account_id
+      tier: core
+      providers: 4
+      share: 0.571
+      type: string
+      spellings:
+      - portfolioId
+      - accountNumber
+      - accountId
+      - account_id
+    - name: id
+      tier: core
+      providers: 4
+      share: 0.571
+      type: string
+      spellings:
+      - id
+    - name: currency
+      tier: extended
+      providers: 3
+      share: 0.429
+      type: string
+      spellings:
+      - currency
+    long_tail_count: 66
+    long_tail_sample:
+    - benchmark_id
+    - created_at
+    - description
+    - total_value
+    - type
+    - updated_at
+    - account_count
+    - account_value
+    - accounts
+    - advisor_id
+    - allocations
+    - asset_class
+    - assets
+    - bonus_credit
+    - client_portfolio_id
+    - credit
+    - current_cash
+    - customer_id
+    - desk_id
+    - desk_name
+    - detail
+    - entity
+    - entry_orders
+    - exit_orders
+    - first_name
+    - full_name
+    - funds_targets_changed
+    - holdings
+    - holdings_count
+    - household_id
+    - inception_date
+    - is_custodial_cash
+    - is_fund_targets_changed
+    - last_name
+    - last_portfolio_rebalance
+    - managed_value
+    - manager
+    - mandate_type
+    - mirrors
+    - model
+  watchlist:
+    segments_seen:
+      watchlists: 8
+    providers_exposing: 8
+    providers_with_readable_schema: 6
+    operations:
+    - operation: GET collection
+      providers: 8
+      share: 1.0
+      tier: core
+    - operation: POST collection
+      providers: 8
+      share: 1.0
+      tier: core
+    - operation: DELETE item
+      providers: 7
+      share: 0.875
+      tier: core
+    - operation: GET item
+      providers: 7
+      share: 0.875
+      tier: core
+    - operation: UPDATE item
+      providers: 4
+      share: 0.5
+      tier: core
+    properties:
+    - name: id
+      tier: core
+      providers: 5
+      share: 0.833
+      type: string
+      spellings:
+      - id
+      - watchlistId
+      - watchlist_id
+    - name: name
+      tier: core
+      providers: 5
+      share: 0.833
+      type: string
+      spellings:
+      - name
+    - name: created_at
+      tier: core
+      providers: 3
+      share: 0.5
+      type: string
+      spellings:
+      - created_at
+    - name: total_items
+      tier: core
+      providers: 3
+      share: 0.5
+      type: integer
+      spellings:
+      - total_items
+      - totalItems
+    long_tail_count: 30
+    long_tail_sample:
+    - added_at
+    - added_price
+    - next_page_token
+    - page_number
+    - previous_page_token
+    - symbol
+    - symbols
+    - actions
+    - cms_id
+    - description
+    - dynamic_url
+    - elapsedtime
+    - error
+    - gcid
+    - group_name
+    - is_default
+    - is_user_selected_default
+    - kind
+    - members
+    - order_index
+    - owner_subaccount_id
+    - params
+    - related_assets
+    - river_ids
+    - subaccount_id
+    - supported_variations
+    - type
+    - watchlist_entries
+    - watchlist_rank
+    - watchlist_type

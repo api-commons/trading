@@ -1,0 +1,54 @@
+provider: anchorage
+apis_io: https://apis.io/providers/anchorage/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - orders
+    - order
+    properties:
+      id: orderId
+      type: orderType
+      quantity: quantity
+      price: limitPrice
+      side: side
+      symbol: symbol
+      time_in_force: timeInForce
+      created_at: timestamp
+      account_id: accountId
+      filled_quantity: cumQty
+      average_fill_price: avgPx
+      currency: currency
+      status: orderStatus
+    core_coverage: 0.889
+    evidence:
+    - openapi/_original/anchorage-v2-openapi-original.yml#GET /trading/orders
+    - openapi/_original/anchorage-v2-openapi-original.yml#GET /trading/orders/{orderId}
+    - openapi/_original/anchorage-v2-openapi-original.yml#POST /trading/order
+  position:
+    path_segment:
+    - positions
+    properties:
+      quantity: quantity
+      current_price: currentPrice
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/anchorage-v2-openapi-original.yml#GET /trading/positions
+    - openapi/_original/anchorage-v2-openapi-original.yml#GET /wallets/{walletId}/staking/positions
+  brokerage_account:
+    path_segment:
+    - accounts
+    - subaccounts
+    properties:
+      type: type
+      id: id
+      created_at: createdAt
+      name: name
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/anchorage-v2-openapi-original.yml#GET /onboarding/subaccounts
+    - openapi/_original/anchorage-v2-openapi-original.yml#GET /onboarding/subaccounts/{subaccountId}
+    - openapi/_original/anchorage-v2-openapi-original.yml#GET /subaccounts/customers/accounts
+    - openapi/_original/anchorage-v2-openapi-original.yml#GET /tax/accounts
+    - openapi/_original/anchorage-v2-openapi-original.yml#GET /trading/accounts

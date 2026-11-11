@@ -1,0 +1,29 @@
+provider: xpansiv
+apis_io: https://apis.io/providers/xpansiv/
+context: trading
+generated: '2026-11-10'
+concepts:
+  position:
+    path_segment:
+    - holding
+    properties:
+      quantity: quantity
+      account_id: accountId
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/nar-registry-client-v1_nar.client.v1.openapi.yaml#GET /api/ledger/holding
+    - openapi/_original/optimal-v1_optimal.transferposition.v1.openapi.yaml#GET /api/ledger/{ledgerIdentifier}/holding
+    - openapi/_original/tigr-registry-client-v1_tigr.client.v1.openapi.yaml#GET /api/ledger/holding
+    - openapi/_original/xpansiv-nar-registry-client-openapi.yml#GET /api/ledger/holding
+    - openapi/_original/xpansiv-optimal-transfer-position-openapi.yml#GET /api/ledger/{ledgerIdentifier}/holding
+  brokerage_account:
+    path_segment:
+    - account
+    properties:
+      id: id
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/optimal-v1_optimal.transferposition.v1.openapi.yaml#GET /api/ledger/{ledgerIdentifier}/account
+    - openapi/_original/xpansiv-connect-openapi.yml#GET /account/{AccountIdentifier}
+    - openapi/_original/xpansiv-connect-v1_xpansiv-connect.v1.openapi.yaml#GET /account/{AccountIdentifier}
+    - openapi/_original/xpansiv-optimal-transfer-position-openapi.yml#GET /api/ledger/{ledgerIdentifier}/account

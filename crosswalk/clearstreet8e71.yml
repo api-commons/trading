@@ -1,0 +1,95 @@
+provider: clearstreet8e71
+apis_io: https://apis.io/providers/clearstreet8e71/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - orders
+    properties:
+      id:
+      - client_order_id
+      - id
+      type: order_type
+      quantity: quantity
+      price: limit_price
+      side: side
+      symbol:
+      - instrument_id
+      - symbol
+      time_in_force: time_in_force
+      created_at: created_at
+      stop_price: stop_price
+      account_id: account_id
+      filled_quantity: filled_quantity
+      average_fill_price: average_fill_price
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/clearstreet8e71-openapi.yaml#DELETE /v1/accounts/{account_id}/orders
+    - openapi/_original/clearstreet8e71-openapi.yaml#DELETE /v1/accounts/{account_id}/orders/{order_id}
+    - openapi/_original/clearstreet8e71-openapi.yaml#GET /v1/accounts/{account_id}/orders
+    - openapi/_original/clearstreet8e71-openapi.yaml#GET /v1/accounts/{account_id}/orders/{order_id}
+    - openapi/_original/clearstreet8e71-openapi.yaml#PATCH /v1/accounts/{account_id}/orders/{order_id}
+  fill:
+    path_segment:
+    - executions
+    properties:
+      order_id: order_id
+      price: price
+      id: id
+      quantity: quantity
+      symbol:
+      - instrument_id
+      - symbol
+      side: side
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/clearstreet8e71-openapi.yaml#GET /v1/accounts/{account_id}/executions
+  position:
+    path_segment:
+    - positions
+    properties:
+      quantity: quantity
+      symbol:
+      - instrument_id
+      - symbol
+      average_cost: cost_basis
+      account_id: account_id
+      id:
+      - client_order_id
+      - id
+      created_at: created_at
+      unrealized_pnl: unrealized_pnl
+      market_value: market_value
+      side: side
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/clearstreet8e71-openapi.yaml#DELETE /v1/accounts/{account_id}/positions
+    - openapi/_original/clearstreet8e71-openapi.yaml#DELETE /v1/accounts/{account_id}/positions/{instrument_id}
+    - openapi/_original/clearstreet8e71-openapi.yaml#GET /v1/accounts/{account_id}/positions
+  brokerage_account:
+    path_segment:
+    - accounts
+    properties:
+      type: type
+      id: id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/clearstreet8e71-openapi.yaml#GET /v1/accounts
+    - openapi/_original/clearstreet8e71-openapi.yaml#GET /v1/accounts/{account_id}
+    - openapi/_original/clearstreet8e71-openapi.yaml#PATCH /v1/accounts/{account_id}
+  watchlist:
+    path_segment:
+    - watchlists
+    properties:
+      id: id
+      name: name
+      created_at: created_at
+      total_items: total_items
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/clearstreet8e71-openapi.yaml#DELETE /v1/watchlists/{watchlist_id}
+    - openapi/_original/clearstreet8e71-openapi.yaml#GET /v1/watchlists
+    - openapi/_original/clearstreet8e71-openapi.yaml#GET /v1/watchlists/{watchlist_id}
+    - openapi/_original/clearstreet8e71-openapi.yaml#POST /v1/watchlists

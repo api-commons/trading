@@ -1,0 +1,54 @@
+provider: saxo
+apis_io: https://apis.io/providers/saxo/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - orders
+    properties:
+      id: OrderId
+      type: OrderType
+      quantity: Amount
+      price: Price
+      side: BuySell
+      time_in_force: Duration
+      account_id: AccountId
+      filled_quantity: FilledAmount
+      currency: QuoteCurrency
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/port.yaml#GET /port/v1/orders
+    - openapi/_original/trade.yaml#DELETE /trade/v2/orders
+    - openapi/_original/trade.yaml#DELETE /trade/v2/orders/{OrderIds}
+    - openapi/_original/trade.yaml#PATCH /trade/v2/orders
+    - openapi/_original/trade.yaml#POST /trade/v2/orders
+  position:
+    path_segment:
+    - positions
+    - holdings
+    properties:
+      quantity: Amount
+      account_id: AccountId
+      id: PositionId
+      side: BuySell
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/ca.yaml#GET /ca/v2/holdings
+    - openapi/_original/hist.yaml#GET /hist/v3/positions/{ClientKey}
+    - openapi/_original/port.yaml#GET /port/v1/positions
+    - openapi/_original/port.yaml#GET /port/v1/positions/{PositionId}
+    - openapi/_original/trade.yaml#PATCH /trade/v1/positions/{PositionId}
+  brokerage_account:
+    path_segment:
+    - accounts
+    properties:
+      type: AccountType
+      created_at: CreationDate
+      account_id: AccountId
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/cm.yaml#POST /cm/v2/accounts
+    - openapi/_original/port.yaml#GET /port/v1/accounts
+    - openapi/_original/port.yaml#GET /port/v1/accounts/{AccountKey}
+    - openapi/_original/port.yaml#PATCH /port/v1/accounts/{AccountKey}

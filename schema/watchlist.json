@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/trading/main/schema/watchlist.json",
+  "title": "Watchlist",
+  "description": "The common watchlist in Trading, distilled from 6 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.833,
+      "x-commons-providers": 5,
+      "x-commons-spellings": [
+        "id",
+        "watchlistId",
+        "watchlist_id"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.833,
+      "x-commons-providers": 5,
+      "x-commons-spellings": [
+        "name"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.5,
+      "x-commons-providers": 3,
+      "x-commons-spellings": [
+        "created_at"
+      ],
+      "format": "date-time"
+    },
+    "total_items": {
+      "type": "integer",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.5,
+      "x-commons-providers": 3,
+      "x-commons-spellings": [
+        "total_items",
+        "totalItems"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "trading",
+    "concept": "watchlist",
+    "providers": 6,
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
+  }
+}

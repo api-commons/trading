@@ -1,0 +1,32 @@
+provider: arch
+apis_io: https://apis.io/providers/arch/
+context: trading
+generated: '2026-11-10'
+concepts:
+  position:
+    path_segment:
+    - holdings
+    properties:
+      id: id
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/arch-client-api-openapi.json#GET /client-api/v0/holdings
+    - openapi/_original/arch-client-api-openapi.json#GET /client-api/v0/holdings/{id}
+    - openapi/_original/arch-client-api-openapi.json#GET /client-api/v0/investing-entities/{id}/holdings
+    - openapi/_original/arch-client-api-openapi.json#POST /client-api/v0/holdings
+    - openapi/_original/arch-labs-client-api-openapi.json#GET /client-api/v0/holdings
+  brokerage_account:
+    path_segment:
+    - accounts
+    - account
+    properties:
+      type: kind
+      id: id
+      name: name
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/arch-client-api-openapi.json#GET /client-api/v0/accounts
+    - openapi/_original/arch-client-api-openapi.json#GET /client-api/v0/accounts/{id}
+    - openapi/_original/arch-client-api-openapi.json#POST /client-api/v0/holdings/account
+    - openapi/_original/arch-labs-client-api-openapi.json#GET /client-api/v0/accounts
+    - openapi/_original/arch-labs-client-api-openapi.json#GET /client-api/v0/accounts/{id}

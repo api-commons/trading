@@ -1,0 +1,29 @@
+provider: tiaa
+apis_io: https://apis.io/providers/tiaa/
+context: trading
+generated: '2026-11-10'
+concepts:
+  position:
+    path_segment:
+    - positions
+    properties:
+      quantity: quantity
+      symbol: symbol
+      average_cost: costBasis
+      account_id: accountId
+      id: positionId
+      market_value: marketValue
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/tiaa-fdx-openapi.yml#GET /accounts/{accountId}/positions
+  brokerage_account:
+    path_segment:
+    - accounts
+    properties:
+      type: accountType
+      account_id: accountId
+      account_number: accountNumber
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/tiaa-fdx-openapi.yml#GET /accounts
+    - openapi/_original/tiaa-fdx-openapi.yml#GET /accounts/{accountId}

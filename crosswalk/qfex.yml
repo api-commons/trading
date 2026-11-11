@@ -1,0 +1,21 @@
+provider: qfex
+apis_io: https://apis.io/providers/qfex/
+context: trading
+generated: '2026-11-10'
+concepts:
+  position:
+    path_segment:
+    - positions
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/qfex-openapi-original.yml#GET /user/positions
+  brokerage_account:
+    path_segment:
+    - subaccounts
+    properties:
+      account_id: account_id
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/qfex-openapi-original.yml#GET /user/subaccounts
+    - openapi/_original/qfex-openapi-original.yml#POST /user/subaccounts

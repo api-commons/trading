@@ -1,0 +1,68 @@
+provider: btse
+apis_io: https://apis.io/providers/btse/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - orders
+    - order
+    - open_orders
+    properties:
+      id:
+      - id
+      - orderID
+      - orderId
+      type:
+      - type
+      - orderType
+      quantity: size
+      price:
+      - rate
+      - price
+      side:
+      - side
+      - orderSide
+      symbol: symbol
+      time_in_force:
+      - duration
+      - timeInForce
+      - time_in_force
+      created_at: timestamp
+      stop_price:
+      - triggerPrice
+      - stopPrice
+      filled_quantity: filledSize
+      average_fill_price: averageFillPrice
+      reduce_only: reduceOnly
+      currency: currency
+      post_only: postOnly
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/btse-earn-openapi.yml#GET /api/v3.3/invest/orders
+    - openapi/_original/btse-futures-legacy-openapi.yml#DELETE /api/v2.3/order
+    - openapi/_original/btse-futures-legacy-openapi.yml#GET /api/v2.3/order
+    - openapi/_original/btse-futures-legacy-openapi.yml#GET /api/v2.3/user/open_orders
+    - openapi/_original/btse-futures-legacy-openapi.yml#POST /api/v2.3/order
+  position:
+    path_segment:
+    - positions
+    properties:
+      quantity: size
+      symbol: symbol
+      average_cost: entryPrice
+      id:
+      - positionId
+      - orderId
+      created_at: timestamp
+      current_price: markPrice
+      side:
+      - side
+      - orderSide
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/btse-futures-legacy-openapi.yml#GET /api/v2.3/user/positions
+    - openapi/_original/btse-futures-openapi.yml#DELETE /v3/trade/positions
+    - openapi/_original/btse-futures-openapi.yml#GET /v3/trade/positions
+    - openapi/_original/futures-rest.openapi.yaml#GET /api/v2.3/user/positions
+    - openapi/_original/futures_openapi_v3.yaml#DELETE /v3/trade/positions

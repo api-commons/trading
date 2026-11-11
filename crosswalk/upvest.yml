@@ -1,0 +1,81 @@
+provider: upvest
+apis_io: https://apis.io/providers/upvest/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - orders
+    properties:
+      id: id
+      type: type
+      quantity: quantity
+      price: limit_price
+      side: side
+      symbol: instrument_id
+      created_at: created_at
+      stop_price: stop_price
+      account_id:
+      - account_id
+      - portfolio_id
+      updated_at: updated_at
+      currency: currency
+      user_id: user_id
+    core_coverage: 0.889
+    evidence:
+    - openapi/_original/upvest-investment-api-openapi.yml#GET /orders
+    - openapi/_original/upvest-investment-api-openapi.yml#GET /orders/{order_id}
+    - openapi/_original/upvest-investment-api-openapi.yml#POST /orders
+    - openapi/_original/upvest-investment-api-openapi.yml#POST /portfolios/{portfolio_id}/orders
+  fill:
+    path_segment:
+    - executions
+    properties:
+      order_id: order_id
+      price: price
+      id: id
+      quantity: quantity
+      executed_at: executed_at
+    core_coverage: 0.625
+    evidence:
+    - openapi/_original/upvest-investment-api-openapi.yml#GET /orders/{order_id}/executions
+  position:
+    path_segment:
+    - positions
+    properties:
+      quantity: quantity
+      symbol: instrument_id
+      account_id: account_id
+      id: id
+      created_at: created_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/upvest-investment-api-openapi.yml#GET /accounts/{account_id}/positions
+    - openapi/_original/upvest-investment-api-openapi.yml#GET /accounts/{account_id}/positions/{position_id}
+  brokerage_account:
+    path_segment:
+    - accounts
+    properties:
+      type: type
+      id: id
+      created_at: created_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/upvest-investment-api-openapi.yml#DELETE /accounts/{account_id}
+    - openapi/_original/upvest-investment-api-openapi.yml#GET /accounts
+    - openapi/_original/upvest-investment-api-openapi.yml#GET /accounts/{account_id}
+    - openapi/_original/upvest-investment-api-openapi.yml#GET /users/{user_id}/accounts
+    - openapi/_original/upvest-investment-api-openapi.yml#PATCH /accounts/{account_id}
+  portfolio:
+    path_segment:
+    - portfolios
+    properties:
+      name: name
+      account_id: account_id
+      id: id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/upvest-investment-api-openapi.yml#GET /portfolios
+    - openapi/_original/upvest-investment-api-openapi.yml#GET /portfolios/{portfolio_id}
+    - openapi/_original/upvest-investment-api-openapi.yml#PATCH /portfolios/{portfolio_id}
+    - openapi/_original/upvest-investment-api-openapi.yml#POST /portfolios

@@ -1,0 +1,80 @@
+provider: backpack
+apis_io: https://apis.io/providers/backpack/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - order
+    - orders
+    properties:
+      id:
+      - id
+      - orderId
+      type: orderType
+      quantity: quantity
+      price: price
+      side: side
+      symbol: symbol
+      time_in_force: timeInForce
+      created_at: createdAt
+      stop_price: triggerPrice
+      reduce_only: reduceOnly
+      post_only: postOnly
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/backpack-exchange-openapi.yml#DELETE /api/v1/order
+    - openapi/_original/backpack-exchange-openapi.yml#DELETE /api/v1/orders
+    - openapi/_original/backpack-exchange-openapi.yml#GET /api/v1/account/limits/order
+    - openapi/_original/backpack-exchange-openapi.yml#GET /api/v1/order
+    - openapi/_original/backpack-exchange-openapi.yml#GET /api/v1/orders
+  fill:
+    path_segment:
+    - fill
+    - fills
+    properties:
+      order_id: orderId
+      price: price
+      quantity: quantity
+      symbol: symbol
+      side: side
+      executed_at:
+      - timestamp
+      - filledAt
+      fee: fee
+      created_at: createdAt
+      trade_id: tradeId
+    core_coverage: 0.875
+    evidence:
+    - openapi/_original/backpack-exchange-openapi.yml#GET /wapi/v1/history/fills
+    - openapi/_original/backpack-exchange-openapi.yml#GET /wapi/v1/history/quote/fill
+    - openapi/_original/backpack-exchange-openapi.yml#GET /wapi/v1/history/rfq/fill
+  position:
+    path_segment:
+    - positions
+    - position
+    properties:
+      quantity: quantity
+      symbol: symbol
+      average_cost: entryPrice
+      id:
+      - id
+      - positionId
+      created_at: createdAt
+      current_price: markPrice
+      unrealized_pnl: unrealizedPnl
+      side: side
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/backpack-exchange-openapi.yml#GET /api/v1/borrowLend/positions
+    - openapi/_original/backpack-exchange-openapi.yml#GET /api/v1/position
+    - openapi/_original/backpack-exchange-openapi.yml#GET /wapi/v1/history/borrowLend/positions
+    - openapi/_original/backpack-exchange-openapi.yml#GET /wapi/v1/history/position
+  brokerage_account:
+    path_segment:
+    - account
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/backpack-exchange-openapi.yml#GET /api/v1/account
+    - openapi/_original/backpack-exchange-openapi.yml#PATCH /api/v1/account

@@ -1,0 +1,31 @@
+provider: zebpay
+apis_io: https://apis.io/providers/zebpay/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - orders
+    - order
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/zebpay-postman-converted.yml#DELETE /api/v1/trade/order
+    - openapi/_original/zebpay-postman-converted.yml#DELETE /orders/{orderId}
+    - openapi/_original/zebpay-postman-converted.yml#GET /orders
+    - openapi/_original/zebpay-postman-converted.yml#POST /api/v1/trade/order
+    - openapi/_original/zebpay-postman-converted.yml#POST /orders
+  fill:
+    path_segment:
+    - fills
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/zebpay-postman-converted.yml#GET /orders/{orderId}/fills
+  position:
+    path_segment:
+    - positions
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/zebpay-postman-converted.yml#GET /api/v1/trade/positions

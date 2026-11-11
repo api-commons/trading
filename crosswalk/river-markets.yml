@@ -1,0 +1,66 @@
+provider: river-markets
+apis_io: https://apis.io/providers/river-markets/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - orders
+    - order
+    properties:
+      type: order_type
+      quantity: qty
+      price: price
+      time_in_force: time_in_force
+      created_at: created_at
+      average_fill_price: average_price
+      updated_at: updated_at
+      post_only: post_only
+    core_coverage: 0.556
+    evidence:
+    - openapi/_original/river-markets-openapi-original.json#DELETE /v1/orders/{order_id}
+    - openapi/_original/river-markets-openapi-original.json#GET /v1/orders
+    - openapi/_original/river-markets-openapi-original.json#GET /v1/orders/{order_id}
+    - openapi/_original/river-markets-openapi-original.json#PATCH /v1/orders/{order_id}
+    - openapi/_original/river-markets-openapi-original.json#POST /v1/orders
+  fill:
+    path_segment:
+    - fills
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/river-markets-openapi-original.json#GET /v1/fills
+  position:
+    path_segment:
+    - positions
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/river-markets-openapi-original.json#GET /v1/positions
+  brokerage_account:
+    path_segment:
+    - subaccounts
+    properties:
+      type: account_type
+      name: name
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/river-markets-openapi-original.json#DELETE /v1/subaccounts/{subaccount_id}
+    - openapi/_original/river-markets-openapi-original.json#GET /v1/subaccounts
+    - openapi/_original/river-markets-openapi-original.json#GET /v1/subaccounts/{subaccount_id}
+    - openapi/_original/river-markets-openapi-original.json#PATCH /v1/subaccounts/{subaccount_id}
+    - openapi/_original/river-markets-openapi-original.json#POST /v1/subaccounts
+  watchlist:
+    path_segment:
+    - watchlists
+    properties:
+      id: watchlist_id
+      name: name
+      created_at: created_at
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/river-markets-openapi-original.json#DELETE /v1/watchlists/{watchlist_id}
+    - openapi/_original/river-markets-openapi-original.json#GET /v1/watchlists
+    - openapi/_original/river-markets-openapi-original.json#GET /v1/watchlists/{watchlist_id}
+    - openapi/_original/river-markets-openapi-original.json#PATCH /v1/watchlists/{watchlist_id}
+    - openapi/_original/river-markets-openapi-original.json#POST /v1/watchlists

@@ -1,0 +1,59 @@
+provider: tastytrade
+apis_io: https://apis.io/providers/tastytrade/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - orders
+    properties:
+      id: id
+      type: order-type
+      quantity: size
+      price: price
+      time_in_force: time-in-force
+      account_id: account-number
+      updated_at: updated-at
+      user_id: user-id
+    core_coverage: 0.556
+    evidence:
+    - openapi/_original/orders.json#DELETE /accounts/{account_number}/orders/{id}
+    - openapi/_original/orders.json#GET /accounts/{account_number}/orders
+    - openapi/_original/orders.json#GET /accounts/{account_number}/orders/{id}
+    - openapi/_original/orders.json#GET /customers/{customer_id}/orders
+    - openapi/_original/orders.json#PATCH /accounts/{account_number}/orders/{id}
+  position:
+    path_segment:
+    - positions
+    properties:
+      quantity: quantity
+      symbol: symbol
+      account_id: account-number
+      id: order-id
+      created_at: created-at
+      current_price: mark-price
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/balances-and-positions.json#GET /accounts/{account_number}/positions
+  brokerage_account:
+    path_segment:
+    - accounts
+    properties:
+      created_at: created-at
+      account_number: account-number
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/accounts-and-customers.json#GET /customers/{customer_id}/accounts
+    - openapi/_original/accounts-and-customers.json#GET /customers/{customer_id}/accounts/{account_number}
+  watchlist:
+    path_segment:
+    - watchlists
+    properties:
+      name: name
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/watchlists.json#DELETE /watchlists/{watchlist_name}
+    - openapi/_original/watchlists.json#GET /watchlists
+    - openapi/_original/watchlists.json#GET /watchlists/{watchlist_name}
+    - openapi/_original/watchlists.json#POST /watchlists
+    - openapi/_original/watchlists.json#PUT /watchlists/{watchlist_name}

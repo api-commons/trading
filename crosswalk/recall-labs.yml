@@ -1,0 +1,29 @@
+provider: recall-labs
+apis_io: https://apis.io/providers/recall-labs/
+context: trading
+generated: '2026-11-10'
+concepts:
+  position:
+    path_segment:
+    - positions
+    properties:
+      quantity: size
+      symbol: asset
+      average_cost: averagePrice
+      id:
+      - id
+      - positionId
+      created_at: timestamp
+      current_price: markPrice
+      unrealized_pnl: unrealizedPnl
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/recall-labs-competitions-openapi.json#GET /api/agent/perps/positions
+    - openapi/_original/recall-labs-competitions-openapi.json#GET /api/competitions/{competitionId}/agents/{agentId}/perps/positions
+  brokerage_account:
+    path_segment:
+    - account
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/recall-labs-competitions-openapi.json#GET /api/agent/perps/account

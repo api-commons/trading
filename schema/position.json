@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/trading/main/schema/position.json",
+  "title": "Position",
+  "description": "The common position in Trading, distilled from 48 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "quantity": {
+      "type": "number",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.667,
+      "x-commons-providers": 32,
+      "x-commons-spellings": [
+        "quantity",
+        "size",
+        "shares",
+        "qty",
+        "Amount",
+        "Quantity"
+      ]
+    },
+    "symbol": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.583,
+      "x-commons-providers": 28,
+      "x-commons-spellings": [
+        "symbol",
+        "instrument",
+        "instrument_id",
+        "ticker",
+        "instrumentId",
+        "security",
+        "isin",
+        "InstrumentID"
+      ]
+    },
+    "average_cost": {
+      "type": "number",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.458,
+      "x-commons-providers": 22,
+      "x-commons-spellings": [
+        "costBasis",
+        "entryPrice",
+        "average_cost",
+        "cost_basis",
+        "entry_price",
+        "average_price",
+        "avg_entry_price",
+        "avgEntryPrice"
+      ]
+    },
+    "account_id": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.417,
+      "x-commons-providers": 20,
+      "x-commons-spellings": [
+        "account",
+        "account_id",
+        "accountId",
+        "portfolioId",
+        "accountNumber",
+        "account_number",
+        "accountID",
+        "AccountId"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.417,
+      "x-commons-providers": 20,
+      "x-commons-spellings": [
+        "id",
+        "positionId",
+        "client_order_id",
+        "orderId",
+        "PositionId",
+        "order-id"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.333,
+      "x-commons-providers": 16,
+      "x-commons-spellings": [
+        "timestamp",
+        "createdAt",
+        "created_at",
+        "createdDate",
+        "created-at"
+      ],
+      "format": "date-time"
+    },
+    "current_price": {
+      "type": "number",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.312,
+      "x-commons-providers": 15,
+      "x-commons-spellings": [
+        "markPrice",
+        "currentPrice",
+        "mark_price",
+        "lastPrice",
+        "market_price",
+        "mark-price",
+        "last_price"
+      ]
+    },
+    "unrealized_pnl": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.292,
+      "x-commons-providers": 14,
+      "x-commons-spellings": [
+        "unrealizedPnl",
+        "unrealized_pnl",
+        "pnl",
+        "unrealized_pl",
+        "unrealizedPNL",
+        "unrealised_pnl"
+      ]
+    },
+    "market_value": {
+      "type": "number",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.271,
+      "x-commons-providers": 13,
+      "x-commons-spellings": [
+        "marketValue",
+        "market_value",
+        "currentValue",
+        "MarketValue"
+      ]
+    },
+    "side": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.208,
+      "x-commons-providers": 10,
+      "x-commons-spellings": [
+        "side",
+        "orderSide",
+        "direction",
+        "BuySell"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "trading",
+    "concept": "position",
+    "providers": 48,
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
+  }
+}

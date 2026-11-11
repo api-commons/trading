@@ -1,0 +1,46 @@
+provider: bakkt
+apis_io: https://apis.io/providers/bakkt/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - orders
+    properties:
+      id:
+      - id
+      - clientOrderId
+      type: type
+      quantity: quantity
+      price: price
+      side: side
+      symbol: symbol
+      time_in_force: timeInForce
+      created_at: createdAt
+      stop_price: stopPrice
+      account_id: account
+      filled_quantity: cumulativeQuantity
+      average_fill_price: averagePrice
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/bakkt-crypto-openapi.yml#GET /apex-crypto/api/v2/orders/{clientOrderId}
+    - openapi/_original/bakkt-crypto-openapi.yml#POST /apex-crypto/api/v2/orders
+  position:
+    path_segment:
+    - positions
+    properties:
+      account_id: account
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/bakkt-crypto-openapi.yml#GET /apex-crypto/api/v2/positions/{account}
+  brokerage_account:
+    path_segment:
+    - accounts
+    properties:
+      type: accountType
+      id: id
+      created_at: createdAt
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/bakkt-crypto-openapi.yml#GET /apex-crypto/api/v2/accounts/{clientAccountId}
+    - openapi/_original/bakkt-crypto-openapi.yml#POST /apex-crypto/api/v2/accounts

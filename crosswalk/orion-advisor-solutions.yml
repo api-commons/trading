@@ -1,0 +1,123 @@
+provider: orion-advisor-solutions
+apis_io: https://apis.io/providers/orion-advisor-solutions/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - orders
+    properties:
+      id: id
+      type: ordType
+      quantity:
+      - shares
+      - amount
+      price: limitPrice
+      side:
+      - side
+      - action
+      symbol:
+      - productId
+      - ticker
+      time_in_force: timeInForce
+      created_at: createdDate
+      stop_price: stopPrice
+      account_id:
+      - accountId
+      - accountNumber
+      status: ordStatus
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#DELETE /v1/Trading/Orders/{key}
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#GET /v1/AdvisorTrading/Instances/Rep/{repId}/{tradeInstanceId}/Orders
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#GET /v1/RepExpTrading/{entityEnum}/{entityId}/TradeInstances/{tradeInstanceId}/Orders
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#GET /v1/Trading/FixBlockOrders/Filter/Orders
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#GET /v1/Trading/FixBlockOrders/{blockId}/Orders
+  fill:
+    path_segment:
+    - transactions
+    properties:
+      order_id: orderId
+      price: avgPrice
+      id: id
+      symbol: ticker
+      executed_at: executionTime
+      account_id:
+      - accountId
+      - accountNumber
+    core_coverage: 0.625
+    evidence:
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#GET /v1/Trading/FixBlockOrders/{blockId}/Transactions
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#GET /v1/Trading/Transactions
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#GET /v1/Trading/Transactions/{key}
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#PUT /v1/Trading/Transactions
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#PUT /v1/Trading/Transactions/{key}
+  position:
+    path_segment:
+    - holdings
+    - positions
+    properties:
+      quantity:
+      - quantity
+      - shares
+      symbol:
+      - ticker
+      - productId
+      - symbol
+      average_cost: costBasis
+      account_id:
+      - account
+      - accountId
+      - accountNumber
+      id: id
+      current_price: lastPrice
+      market_value: marketValue
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#GET /v1/Aggregator/Holdings
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#GET /v1/Compliance/Bcc/Holdings
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#GET /v1/Compliance/Inform/AccessPerson/V2/Holdings
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#GET /v1/Integrations/Eclipse/Accounts/{accountId}/Holdings
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#GET /v1/Integrations/Eclipse/Portfolios/{portfolioId}/Holdings
+  brokerage_account:
+    path_segment:
+    - accounts
+    - account
+    properties:
+      type:
+      - accountType
+      - type
+      id: id
+      created_at: createdDate
+      name: name
+      account_id:
+      - accountId
+      - portfolioId
+      - accountID
+      account_number:
+      - accountNumber
+      - number
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#DELETE /v1/Integrations/ByAllAccounts/Delete/{baaId}/Account/{baaAccountId}
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#GET /v1/Aggregator/Accounts
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#GET /v1/Billing/Accounts
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#GET /v1/Billing/Accounts/{key}
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#GET /v1/Billing/FinalBills/account/{key}
+  portfolio:
+    path_segment:
+    - portfolios
+    - portfolio
+    properties:
+      name: name
+      account_id:
+      - accountNumber
+      - accountId
+      id: id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#DELETE /v1/Integrations/Eclipse/Models/{modelId}/Portfolios/{portfolioId}
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#GET /v1/Integrations/AdvisoryWorld/Proposal/Portfolio
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#GET /v1/Integrations/Eclipse/Households/{clientId}/Portfolios
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#GET /v1/Integrations/Eclipse/Portfolios/{portfolioId}
+    - openapi/_original/orion-advisor-solutions-orion-connect-openapi.json#GET /v1/Integrations/HiddenLevers/SyncData/Portfolios

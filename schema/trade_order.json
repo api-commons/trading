@@ -1,0 +1,270 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/trading/main/schema/trade_order.json",
+  "title": "Trade Order",
+  "description": "The common trade_order in Trading, distilled from 36 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.944,
+      "x-commons-providers": 34,
+      "x-commons-spellings": [
+        "id",
+        "orderId",
+        "client_order_id",
+        "clientOrderId",
+        "order_id",
+        "orderID",
+        "clientOrderID",
+        "OrderId"
+      ]
+    },
+    "type": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.944,
+      "x-commons-providers": 34,
+      "x-commons-spellings": [
+        "type",
+        "orderType",
+        "order_type",
+        "OrderType",
+        "ordType",
+        "order-type"
+      ]
+    },
+    "quantity": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.917,
+      "x-commons-providers": 33,
+      "x-commons-spellings": [
+        "quantity",
+        "amount",
+        "size",
+        "qty",
+        "origQty",
+        "units",
+        "shares",
+        "Amount"
+      ]
+    },
+    "price": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.889,
+      "x-commons-providers": 32,
+      "x-commons-spellings": [
+        "price",
+        "limitPrice",
+        "limit_price",
+        "avgPrice",
+        "rate",
+        "Price",
+        "LimitPrice"
+      ]
+    },
+    "side": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.861,
+      "x-commons-providers": 31,
+      "x-commons-spellings": [
+        "side",
+        "action",
+        "orderSide",
+        "instruction",
+        "BuySell",
+        "Side"
+      ]
+    },
+    "symbol": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.778,
+      "x-commons-providers": 28,
+      "x-commons-spellings": [
+        "symbol",
+        "ticker",
+        "instrument_id",
+        "instrument",
+        "instrumentID",
+        "instrumentId",
+        "security",
+        "product_id"
+      ]
+    },
+    "time_in_force": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.75,
+      "x-commons-providers": 27,
+      "x-commons-spellings": [
+        "timeInForce",
+        "time_in_force",
+        "duration",
+        "tif",
+        "Duration",
+        "time-in-force",
+        "TimeInForce"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.722,
+      "x-commons-providers": 26,
+      "x-commons-spellings": [
+        "createdAt",
+        "created_at",
+        "timestamp",
+        "submitted_at",
+        "createTime",
+        "time",
+        "created",
+        "createdDate"
+      ],
+      "format": "date-time"
+    },
+    "stop_price": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.583,
+      "x-commons-providers": 21,
+      "x-commons-spellings": [
+        "stopPrice",
+        "stop_price",
+        "triggerPrice",
+        "trigger_price",
+        "StopPrice"
+      ]
+    },
+    "account_id": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.444,
+      "x-commons-providers": 16,
+      "x-commons-spellings": [
+        "account",
+        "accountId",
+        "account_id",
+        "portfolioId",
+        "account_number",
+        "accountID",
+        "accountNumber",
+        "AccountId"
+      ]
+    },
+    "filled_quantity": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.444,
+      "x-commons-providers": 16,
+      "x-commons-spellings": [
+        "filledQuantity",
+        "cumQty",
+        "cumulativeQuantity",
+        "filledSize",
+        "filled_quantity",
+        "filled_qty",
+        "executedQty",
+        "FilledAmount"
+      ]
+    },
+    "average_fill_price": {
+      "type": "number",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.417,
+      "x-commons-providers": 15,
+      "x-commons-spellings": [
+        "averagePrice",
+        "average_fill_price",
+        "average_price",
+        "avgPx",
+        "averageFillPrice",
+        "filledAvgPrice",
+        "avg_fill_price"
+      ]
+    },
+    "updated_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.361,
+      "x-commons-providers": 13,
+      "x-commons-spellings": [
+        "updatedAt",
+        "updated_at",
+        "updateTime",
+        "updated-at"
+      ],
+      "format": "date-time"
+    },
+    "reduce_only": {
+      "type": "boolean",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.278,
+      "x-commons-providers": 10,
+      "x-commons-spellings": [
+        "reduceOnly",
+        "reduce_only"
+      ]
+    },
+    "currency": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.25,
+      "x-commons-providers": 9,
+      "x-commons-spellings": [
+        "currency",
+        "QuoteCurrency"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.25,
+      "x-commons-providers": 9,
+      "x-commons-spellings": [
+        "orderStatus",
+        "state",
+        "order_status",
+        "ordStatus"
+      ]
+    },
+    "post_only": {
+      "type": "boolean",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.222,
+      "x-commons-providers": 8,
+      "x-commons-spellings": [
+        "postOnly",
+        "post_only"
+      ]
+    },
+    "user_id": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.222,
+      "x-commons-providers": 8,
+      "x-commons-spellings": [
+        "user_id",
+        "userId",
+        "userID",
+        "user-id"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "trading",
+    "concept": "trade_order",
+    "providers": 36,
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
+  }
+}

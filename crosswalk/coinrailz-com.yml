@@ -1,0 +1,13 @@
+provider: coinrailz-com
+apis_io: https://apis.io/providers/coinrailz-com/
+context: trading
+generated: '2026-11-10'
+concepts:
+  position:
+    path_segment:
+    - position
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/coinrailz-com-agent-payment-api-openapi.json#GET /api/solana-yield/position/{wallet}
+    - openapi/_original/coinrailz-com-agent-payment-api-openapi.json#GET /api/yield/position/{wallet}

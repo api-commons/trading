@@ -1,0 +1,74 @@
+provider: paradex
+apis_io: https://apis.io/providers/paradex/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - orders
+    properties:
+      id: id
+      type: type
+      quantity: size
+      price: price
+      side:
+      - side
+      - instruction
+      created_at:
+      - created_at
+      - timestamp
+      stop_price: trigger_price
+      account_id: account
+      average_fill_price: avg_fill_price
+    core_coverage: 0.778
+    evidence:
+    - openapi/_original/paradex-openapi-prod.json#DELETE /algo/orders/{algo_id}
+    - openapi/_original/paradex-openapi-prod.json#DELETE /orders
+    - openapi/_original/paradex-openapi-prod.json#DELETE /orders/batch
+    - openapi/_original/paradex-openapi-prod.json#DELETE /orders/{order_id}
+    - openapi/_original/paradex-openapi-prod.json#GET /algo/orders
+  fill:
+    path_segment:
+    - fills
+    properties:
+      order_id: order_id
+      price: price
+      id: id
+      quantity: size
+      side: side
+      fee: fee
+      created_at: created_at
+      account_id: account
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/paradex-openapi-prod.json#GET /fills
+    - openapi/_original/paradex-openapi.yml#GET /fills
+  position:
+    path_segment:
+    - positions
+    properties:
+      quantity: size
+      account_id: account
+      id: id
+      created_at: created_at
+      unrealized_pnl: unrealized_pnl
+      side: side
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/paradex-openapi-prod.json#GET /positions
+    - openapi/_original/paradex-openapi-prod.json#GET /vaults/positions
+    - openapi/_original/paradex-openapi.yml#GET /positions
+    - openapi/_original/paradex-openapi.yml#GET /vaults/positions
+  brokerage_account:
+    path_segment:
+    - account
+    - subaccounts
+    properties:
+      type: kind
+      created_at: created_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/paradex-openapi-prod.json#GET /account
+    - openapi/_original/paradex-openapi-prod.json#GET /account/subaccounts
+    - openapi/_original/paradex-openapi.yml#GET /account
+    - openapi/_original/paradex-openapi.yml#GET /account/subaccounts

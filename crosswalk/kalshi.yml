@@ -1,0 +1,62 @@
+provider: kalshi
+apis_io: https://apis.io/providers/kalshi/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - orders
+    properties:
+      id:
+      - order_id
+      - client_order_id
+      type: type
+      price: price
+      side:
+      - side
+      - action
+      symbol: ticker
+      time_in_force: time_in_force
+      average_fill_price: average_fill_price
+      reduce_only: reduce_only
+      post_only: post_only
+      user_id: user_id
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/kalshi-openapi.yml#DELETE /portfolio/events/orders
+    - openapi/_original/kalshi-openapi.yml#DELETE /portfolio/events/orders/{order_id}
+    - openapi/_original/kalshi-openapi.yml#GET /fcm/orders
+    - openapi/_original/kalshi-openapi.yml#GET /historical/orders
+    - openapi/_original/kalshi-openapi.yml#GET /portfolio/orders
+  fill:
+    path_segment:
+    - fills
+    properties:
+      order_id: order_id
+      id: fill_id
+      symbol: ticker
+      side:
+      - side
+      - action
+      trade_id: trade_id
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/kalshi-openapi.yml#GET /fcm/fills
+    - openapi/_original/kalshi-openapi.yml#GET /historical/fills
+    - openapi/_original/kalshi-openapi.yml#GET /portfolio/fills
+  position:
+    path_segment:
+    - positions
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/kalshi-openapi.yml#GET /fcm/positions
+    - openapi/_original/kalshi-openapi.yml#GET /historical/positions
+    - openapi/_original/kalshi-openapi.yml#GET /portfolio/positions
+  brokerage_account:
+    path_segment:
+    - subaccounts
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/kalshi-openapi.yml#POST /portfolio/subaccounts

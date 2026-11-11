@@ -1,0 +1,22 @@
+provider: morningstar
+apis_io: https://apis.io/providers/morningstar/
+context: trading
+generated: '2026-11-10'
+concepts:
+  position:
+    path_segment:
+    - positions
+    - holdings
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/morningstar-byallaccounts-openapi.json#GET /positions
+    - openapi/_original/morningstar-portfolios-us-openapi.json#GET /holdings
+  brokerage_account:
+    path_segment:
+    - accounts
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/morningstar-byallaccounts-openapi.json#DELETE /accounts/{id}
+    - openapi/_original/morningstar-byallaccounts-openapi.json#GET /credentials/accounts

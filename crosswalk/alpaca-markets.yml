@@ -1,0 +1,71 @@
+provider: alpaca-markets
+apis_io: https://apis.io/providers/alpaca-markets/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - orders
+    properties:
+      id:
+      - id
+      - client_order_id
+      type: type
+      quantity: qty
+      price: limit_price
+      side: side
+      symbol: symbol
+      time_in_force: time_in_force
+      created_at: submitted_at
+      stop_price: stop_price
+      filled_quantity: filled_qty
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/alpaca-markets-openapi.yml#DELETE /orders
+    - openapi/_original/alpaca-markets-openapi.yml#DELETE /orders/{order_id}
+    - openapi/_original/alpaca-markets-openapi.yml#GET /orders
+    - openapi/_original/alpaca-markets-openapi.yml#GET /orders/{order_id}
+    - openapi/_original/alpaca-markets-openapi.yml#PATCH /orders/{order_id}
+  fill:
+    path_segment:
+    - activities
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/alpaca-markets-openapi.yml#GET /account/activities
+  position:
+    path_segment:
+    - positions
+    properties:
+      quantity: qty
+      symbol: symbol
+      average_cost: avg_entry_price
+      unrealized_pnl: unrealized_pl
+      market_value: market_value
+      side: side
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/alpaca-markets-openapi.yml#DELETE /positions
+    - openapi/_original/alpaca-markets-openapi.yml#DELETE /positions/{symbol_or_asset_id}
+    - openapi/_original/alpaca-markets-openapi.yml#GET /positions
+    - openapi/_original/alpaca-markets-openapi.yml#GET /positions/{symbol_or_asset_id}
+  brokerage_account:
+    path_segment:
+    - accounts
+    - account
+    properties:
+      id: id
+      account_number: account_number
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/alpaca-markets-openapi.yml#GET /account
+    - openapi/_original/alpaca-markets-openapi.yml#GET /accounts/{account_id}
+    - openapi/_original/alpaca-markets-openapi.yml#POST /accounts
+  watchlist:
+    path_segment:
+    - watchlists
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/alpaca-markets-openapi.yml#GET /watchlists
+    - openapi/_original/alpaca-markets-openapi.yml#POST /watchlists

@@ -1,0 +1,368 @@
+context: trading
+generated: '2026-11-10'
+adopters:
+- provider: ally-invest
+  apis_io: https://apis.io/providers/ally-invest/
+  crosswalk: crosswalk/ally-invest.yml
+  concepts:
+  - brokerage_account
+  - position
+  - trade_order
+  - watchlist
+- provider: alpaca-markets
+  apis_io: https://apis.io/providers/alpaca-markets/
+  crosswalk: crosswalk/alpaca-markets.yml
+  concepts:
+  - brokerage_account
+  - fill
+  - position
+  - trade_order
+  - watchlist
+- provider: anchorage
+  apis_io: https://apis.io/providers/anchorage/
+  crosswalk: crosswalk/anchorage.yml
+  concepts:
+  - brokerage_account
+  - position
+  - trade_order
+- provider: arch
+  apis_io: https://apis.io/providers/arch/
+  crosswalk: crosswalk/arch.yml
+  concepts:
+  - brokerage_account
+  - position
+- provider: backpack
+  apis_io: https://apis.io/providers/backpack/
+  crosswalk: crosswalk/backpack.yml
+  concepts:
+  - brokerage_account
+  - fill
+  - position
+  - trade_order
+- provider: bakkt
+  apis_io: https://apis.io/providers/bakkt/
+  crosswalk: crosswalk/bakkt.yml
+  concepts:
+  - brokerage_account
+  - position
+  - trade_order
+- provider: binance
+  apis_io: https://apis.io/providers/binance/
+  crosswalk: crosswalk/binance.yml
+  concepts:
+  - brokerage_account
+  - fill
+  - position
+  - trade_order
+- provider: bloomberg-buyside-enterprise-solutions
+  apis_io: https://apis.io/providers/bloomberg-buyside-enterprise-solutions/
+  crosswalk: crosswalk/bloomberg-buyside-enterprise-solutions.yml
+  concepts:
+  - fill
+  - portfolio
+  - position
+  - trade_order
+- provider: broadridge
+  apis_io: https://apis.io/providers/broadridge/
+  crosswalk: crosswalk/broadridge.yml
+  concepts:
+  - brokerage_account
+  - position
+- provider: btse
+  apis_io: https://apis.io/providers/btse/
+  crosswalk: crosswalk/btse.yml
+  concepts:
+  - position
+  - trade_order
+- provider: clear-street
+  apis_io: https://apis.io/providers/clear-street/
+  crosswalk: crosswalk/clear-street.yml
+  concepts:
+  - brokerage_account
+  - fill
+  - position
+  - trade_order
+  - watchlist
+- provider: clearstreet8e71
+  apis_io: https://apis.io/providers/clearstreet8e71/
+  crosswalk: crosswalk/clearstreet8e71.yml
+  concepts:
+  - brokerage_account
+  - fill
+  - position
+  - trade_order
+  - watchlist
+- provider: coinrailz-com
+  apis_io: https://apis.io/providers/coinrailz-com/
+  crosswalk: crosswalk/coinrailz-com.yml
+  concepts:
+  - position
+- provider: delta-exchange
+  apis_io: https://apis.io/providers/delta-exchange/
+  crosswalk: crosswalk/delta-exchange.yml
+  concepts:
+  - brokerage_account
+  - fill
+  - position
+  - trade_order
+- provider: derivadex
+  apis_io: https://apis.io/providers/derivadex/
+  crosswalk: crosswalk/derivadex.yml
+  concepts:
+  - position
+- provider: drivewealth
+  apis_io: https://apis.io/providers/drivewealth/
+  crosswalk: crosswalk/drivewealth.yml
+  concepts:
+  - brokerage_account
+  - portfolio
+  - position
+  - trade_order
+- provider: envestnet
+  apis_io: https://apis.io/providers/envestnet/
+  crosswalk: crosswalk/envestnet.yml
+  concepts:
+  - brokerage_account
+  - position
+- provider: etoro
+  apis_io: https://apis.io/providers/etoro/
+  crosswalk: crosswalk/etoro.yml
+  concepts:
+  - brokerage_account
+  - portfolio
+  - position
+  - trade_order
+  - watchlist
+- provider: evedex
+  apis_io: https://apis.io/providers/evedex/
+  crosswalk: crosswalk/evedex.yml
+  concepts:
+  - brokerage_account
+  - fill
+  - position
+  - trade_order
+- provider: forum
+  apis_io: https://apis.io/providers/forum/
+  crosswalk: crosswalk/forum.yml
+  concepts:
+  - brokerage_account
+  - fill
+  - position
+  - trade_order
+- provider: fundrise
+  apis_io: https://apis.io/providers/fundrise/
+  crosswalk: crosswalk/fundrise.yml
+  concepts:
+  - position
+- provider: gemini-trust
+  apis_io: https://apis.io/providers/gemini-trust/
+  crosswalk: crosswalk/gemini-trust.yml
+  concepts:
+  - brokerage_account
+  - fill
+  - position
+  - trade_order
+- provider: gmx
+  apis_io: https://apis.io/providers/gmx/
+  crosswalk: crosswalk/gmx.yml
+  concepts:
+  - position
+  - trade_order
+- provider: hitbtc
+  apis_io: https://apis.io/providers/hitbtc/
+  crosswalk: crosswalk/hitbtc.yml
+  concepts:
+  - brokerage_account
+  - position
+  - trade_order
+- provider: interactive-brokers
+  apis_io: https://apis.io/providers/interactive-brokers/
+  crosswalk: crosswalk/interactive-brokers.yml
+  concepts:
+  - brokerage_account
+  - position
+  - trade_order
+- provider: kalshi
+  apis_io: https://apis.io/providers/kalshi/
+  crosswalk: crosswalk/kalshi.yml
+  concepts:
+  - brokerage_account
+  - fill
+  - position
+  - trade_order
+- provider: lemonmarkets
+  apis_io: https://apis.io/providers/lemonmarkets/
+  crosswalk: crosswalk/lemonmarkets.yml
+  concepts:
+  - brokerage_account
+  - fill
+  - position
+  - trade_order
+- provider: morningstar
+  apis_io: https://apis.io/providers/morningstar/
+  crosswalk: crosswalk/morningstar.yml
+  concepts:
+  - brokerage_account
+  - position
+- provider: murex
+  apis_io: https://apis.io/providers/murex/
+  crosswalk: crosswalk/murex.yml
+  concepts:
+  - portfolio
+  - position
+  - trade_order
+- provider: ondo-finance
+  apis_io: https://apis.io/providers/ondo-finance/
+  crosswalk: crosswalk/ondo-finance.yml
+  concepts:
+  - brokerage_account
+  - fill
+  - position
+  - trade_order
+- provider: orderly-network
+  apis_io: https://apis.io/providers/orderly-network/
+  crosswalk: crosswalk/orderly-network.yml
+  concepts:
+  - brokerage_account
+  - position
+  - trade_order
+- provider: orion-advisor-solutions
+  apis_io: https://apis.io/providers/orion-advisor-solutions/
+  crosswalk: crosswalk/orion-advisor-solutions.yml
+  concepts:
+  - brokerage_account
+  - fill
+  - portfolio
+  - position
+  - trade_order
+- provider: paradex
+  apis_io: https://apis.io/providers/paradex/
+  crosswalk: crosswalk/paradex.yml
+  concepts:
+  - brokerage_account
+  - fill
+  - position
+  - trade_order
+- provider: qfex
+  apis_io: https://apis.io/providers/qfex/
+  crosswalk: crosswalk/qfex.yml
+  concepts:
+  - brokerage_account
+  - position
+- provider: recall-labs
+  apis_io: https://apis.io/providers/recall-labs/
+  crosswalk: crosswalk/recall-labs.yml
+  concepts:
+  - brokerage_account
+  - position
+- provider: rho-protocol
+  apis_io: https://apis.io/providers/rho-protocol/
+  crosswalk: crosswalk/rho-protocol.yml
+  concepts:
+  - brokerage_account
+  - position
+  - trade_order
+- provider: river-markets
+  apis_io: https://apis.io/providers/river-markets/
+  crosswalk: crosswalk/river-markets.yml
+  concepts:
+  - brokerage_account
+  - fill
+  - position
+  - trade_order
+  - watchlist
+- provider: saxo
+  apis_io: https://apis.io/providers/saxo/
+  crosswalk: crosswalk/saxo.yml
+  concepts:
+  - brokerage_account
+  - position
+  - trade_order
+- provider: stonex
+  apis_io: https://apis.io/providers/stonex/
+  crosswalk: crosswalk/stonex.yml
+  concepts:
+  - brokerage_account
+  - position
+- provider: tastytrade
+  apis_io: https://apis.io/providers/tastytrade/
+  crosswalk: crosswalk/tastytrade.yml
+  concepts:
+  - brokerage_account
+  - position
+  - trade_order
+  - watchlist
+- provider: temenos
+  apis_io: https://apis.io/providers/temenos/
+  crosswalk: crosswalk/temenos.yml
+  concepts:
+  - brokerage_account
+  - portfolio
+  - position
+- provider: tiaa
+  apis_io: https://apis.io/providers/tiaa/
+  crosswalk: crosswalk/tiaa.yml
+  concepts:
+  - brokerage_account
+  - position
+- provider: tradestation
+  apis_io: https://apis.io/providers/tradestation/
+  crosswalk: crosswalk/tradestation.yml
+  concepts:
+  - brokerage_account
+  - position
+  - trade_order
+- provider: tradier
+  apis_io: https://apis.io/providers/tradier/
+  crosswalk: crosswalk/tradier.yml
+  concepts:
+  - position
+  - trade_order
+  - watchlist
+- provider: trading212
+  apis_io: https://apis.io/providers/trading212/
+  crosswalk: crosswalk/trading212.yml
+  concepts:
+  - position
+  - trade_order
+- provider: tzero
+  apis_io: https://apis.io/providers/tzero/
+  crosswalk: crosswalk/tzero.yml
+  concepts:
+  - brokerage_account
+  - position
+  - trade_order
+- provider: upstox
+  apis_io: https://apis.io/providers/upstox/
+  crosswalk: crosswalk/upstox.yml
+  concepts:
+  - position
+  - trade_order
+- provider: upvest
+  apis_io: https://apis.io/providers/upvest/
+  crosswalk: crosswalk/upvest.yml
+  concepts:
+  - brokerage_account
+  - fill
+  - portfolio
+  - position
+  - trade_order
+- provider: woox
+  apis_io: https://apis.io/providers/woox/
+  crosswalk: crosswalk/woox.yml
+  concepts:
+  - position
+  - trade_order
+- provider: xpansiv
+  apis_io: https://apis.io/providers/xpansiv/
+  crosswalk: crosswalk/xpansiv.yml
+  concepts:
+  - brokerage_account
+  - position
+- provider: zebpay
+  apis_io: https://apis.io/providers/zebpay/
+  crosswalk: crosswalk/zebpay.yml
+  concepts:
+  - fill
+  - position
+  - trade_order

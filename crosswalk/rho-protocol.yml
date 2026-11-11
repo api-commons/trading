@@ -1,0 +1,38 @@
+provider: rho-protocol
+apis_io: https://apis.io/providers/rho-protocol/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - orders
+    properties:
+      id:
+      - clientOrderId
+      - orderId
+      type: orderType
+      quantity: quantity
+      price: price
+      side: side
+      symbol: symbol
+      time_in_force: timeInForce
+      created_at: createdAt
+      user_id: userId
+    core_coverage: 0.889
+    evidence:
+    - openapi/_original/rho-protocol-openapi-original.json#GET /users/orders
+    - openapi/_original/rho-protocol-openapi-original.json#POST /orders
+  position:
+    path_segment:
+    - positions
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/rho-protocol-openapi-original.json#GET /users/positions
+  brokerage_account:
+    path_segment:
+    - account
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/rho-protocol-openapi-original.json#GET /users/account

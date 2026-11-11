@@ -1,0 +1,59 @@
+provider: orderly-network
+apis_io: https://apis.io/providers/orderly-network/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - order
+    - orders
+    - open_orders
+    properties:
+      id:
+      - order_id
+      - client_order_id
+      type:
+      - order_type
+      - type
+      quantity:
+      - quantity
+      - amount
+      price: price
+      side: side
+      symbol: symbol
+      created_at: timestamp
+      stop_price: trigger_price
+      reduce_only: reduce_only
+      user_id: user_id
+    core_coverage: 0.889
+    evidence:
+    - openapi/_original/orderly-network-openapi-original.yml#DELETE /v1/algo/client/order
+    - openapi/_original/orderly-network-openapi-original.yml#DELETE /v1/algo/order
+    - openapi/_original/orderly-network-openapi-original.yml#DELETE /v1/algo/orders
+    - openapi/_original/orderly-network-openapi-original.yml#DELETE /v1/client/order
+    - openapi/_original/orderly-network-openapi-original.yml#DELETE /v1/order
+  position:
+    path_segment:
+    - positions
+    - holding
+    - position
+    properties:
+      symbol: symbol
+      account_id: account_id
+      created_at: timestamp
+      current_price: mark_price
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/orderly-network-openapi-original.yml#GET /v1/admin/client/holding
+    - openapi/_original/orderly-network-openapi-original.yml#GET /v1/admin/position/{symbol}
+    - openapi/_original/orderly-network-openapi-original.yml#GET /v1/admin/positions
+    - openapi/_original/orderly-network-openapi-original.yml#GET /v1/client/aggregate/holding
+    - openapi/_original/orderly-network-openapi-original.yml#GET /v1/client/aggregate/positions
+  brokerage_account:
+    path_segment:
+    - account
+    properties:
+      created_at: timestamp
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/orderly-network-openapi-original.yml#GET /v1/public/account

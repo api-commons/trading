@@ -1,0 +1,16 @@
+provider: fundrise
+apis_io: https://apis.io/providers/fundrise/
+context: trading
+generated: '2026-11-10'
+concepts:
+  position:
+    path_segment:
+    - holdings
+    properties:
+      quantity: shares
+      average_cost: costBasis
+      market_value: currentValue
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/fundrise-connect-openapi.json#GET /v1/account/{accountId}/holdings
+    - openapi/_original/fundrise-connect-openapi.yml#GET /v1/account/{accountId}/holdings

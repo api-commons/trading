@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/trading/main/schema/brokerage_account.json",
+  "title": "Brokerage Account",
+  "description": "The common brokerage_account in Trading, distilled from 38 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.553,
+      "x-commons-providers": 21,
+      "x-commons-spellings": [
+        "accountType",
+        "type",
+        "kind",
+        "account_type",
+        "AccountType",
+        "classification"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.447,
+      "x-commons-providers": 17,
+      "x-commons-spellings": [
+        "id"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.342,
+      "x-commons-providers": 13,
+      "x-commons-spellings": [
+        "createdAt",
+        "created_at",
+        "createdDate",
+        "timestamp",
+        "CreationDate",
+        "created-at"
+      ],
+      "format": "date-time"
+    },
+    "name": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.237,
+      "x-commons-providers": 9,
+      "x-commons-spellings": [
+        "name"
+      ]
+    },
+    "account_id": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.211,
+      "x-commons-providers": 8,
+      "x-commons-spellings": [
+        "accountId",
+        "account_id",
+        "accountID",
+        "portfolioId",
+        "AccountId",
+        "AccountID"
+      ]
+    },
+    "account_number": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.211,
+      "x-commons-providers": 8,
+      "x-commons-spellings": [
+        "accountNumber",
+        "account_number",
+        "accountNo",
+        "number",
+        "account-number"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "trading",
+    "concept": "brokerage_account",
+    "providers": 38,
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
+  }
+}

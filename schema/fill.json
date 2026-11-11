@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/trading/main/schema/fill.json",
+  "title": "Fill",
+  "description": "The common fill in Trading, distilled from 16 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "order_id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.938,
+      "x-commons-providers": 15,
+      "x-commons-spellings": [
+        "order_id",
+        "orderId",
+        "order",
+        "client_order_id",
+        "clientOrderId"
+      ]
+    },
+    "price": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.812,
+      "x-commons-providers": 13,
+      "x-commons-spellings": [
+        "price",
+        "avgPrice"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.75,
+      "x-commons-providers": 12,
+      "x-commons-spellings": [
+        "id",
+        "fill_id"
+      ]
+    },
+    "quantity": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.75,
+      "x-commons-providers": 12,
+      "x-commons-spellings": [
+        "quantity",
+        "size",
+        "qty",
+        "amount"
+      ]
+    },
+    "symbol": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.75,
+      "x-commons-providers": 12,
+      "x-commons-spellings": [
+        "symbol",
+        "ticker",
+        "instrument_id",
+        "instrument",
+        "security",
+        "product_id"
+      ]
+    },
+    "side": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.625,
+      "x-commons-providers": 10,
+      "x-commons-spellings": [
+        "side",
+        "action",
+        "direction"
+      ]
+    },
+    "executed_at": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.562,
+      "x-commons-providers": 9,
+      "x-commons-spellings": [
+        "timestamp",
+        "time",
+        "executedAt",
+        "executed_at",
+        "filledAt",
+        "executionTime"
+      ],
+      "format": "date-time"
+    },
+    "fee": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.562,
+      "x-commons-providers": 9,
+      "x-commons-spellings": [
+        "fee",
+        "commission",
+        "fees",
+        "fee_amount"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.312,
+      "x-commons-providers": 5,
+      "x-commons-spellings": [
+        "created_at",
+        "createdAt"
+      ],
+      "format": "date-time"
+    },
+    "account_id": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.25,
+      "x-commons-providers": 4,
+      "x-commons-spellings": [
+        "account",
+        "account_id",
+        "account_number",
+        "accountId",
+        "accountNumber"
+      ]
+    },
+    "trade_id": {
+      "type": "integer",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.25,
+      "x-commons-providers": 4,
+      "x-commons-spellings": [
+        "tradeId",
+        "trade_id"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "trading",
+    "concept": "fill",
+    "providers": 16,
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
+  }
+}

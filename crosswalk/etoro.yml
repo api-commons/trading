@@ -1,0 +1,71 @@
+provider: etoro
+apis_io: https://apis.io/providers/etoro/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - orders
+    properties:
+      id:
+      - orderID
+      - orderId
+      type: orderType
+      quantity:
+      - amount
+      - units
+      side: action
+      symbol:
+      - instrumentID
+      - symbol
+      - instrumentId
+    core_coverage: 0.556
+    evidence:
+    - openapi/_original/deprecated-openapi.json#GET /api/v1/trading/info/demo/orders/{orderId}
+    - openapi/_original/deprecated-openapi.json#GET /api/v1/trading/info/real/orders/{orderId}
+    - openapi/_original/etoro-openapi.json#DELETE /api/v2/trading/execution/demo/orders/{orderId}
+    - openapi/_original/etoro-openapi.json#DELETE /api/v2/trading/execution/orders/{orderId}
+    - openapi/_original/etoro-openapi.json#DELETE /api/v3/trading/execution/demo/orders/{orderId}
+  position:
+    path_segment:
+    - positions
+    properties:
+      symbol:
+      - InstrumentID
+      - InstrumentId
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/etoro-openapi.json#PATCH /api/v2/trading/demo/positions/{positionId}
+    - openapi/_original/etoro-openapi.json#PATCH /api/v2/trading/positions/{positionId}
+    - openapi/_original/etoro-openapi.json#POST /api/v1/trading/execution/demo/market-close-orders/positions/{positionId}
+    - openapi/_original/etoro-openapi.json#POST /api/v1/trading/execution/market-close-orders/positions/{positionId}
+  brokerage_account:
+    path_segment:
+    - accounts
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/etoro-openapi.json#GET /api/v1/sub-accounts/me/accounts
+    - openapi/_original/etoro-openapi.json#POST /api/v1/sub-accounts/me/accounts
+  portfolio:
+    path_segment:
+    - portfolio
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/etoro-openapi.json#GET /api/v1/trading/info/demo/portfolio
+    - openapi/_original/etoro-openapi.json#GET /api/v1/trading/info/portfolio
+  watchlist:
+    path_segment:
+    - watchlists
+    properties:
+      id: watchlistId
+      name: name
+      total_items: totalItems
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/etoro-openapi.json#DELETE /api/v1/watchlists/{watchlistId}
+    - openapi/_original/etoro-openapi.json#GET /api/v1/watchlists
+    - openapi/_original/etoro-openapi.json#GET /api/v1/watchlists/{watchlistId}
+    - openapi/_original/etoro-openapi.json#POST /api/v1/watchlists
+    - openapi/_original/etoro-openapi.json#POST /api/v2/watchlists

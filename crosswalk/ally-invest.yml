@@ -1,0 +1,43 @@
+provider: ally-invest
+apis_io: https://apis.io/providers/ally-invest/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - orders
+    properties:
+      id: id
+    core_coverage: 0.111
+    evidence:
+    - openapi/_original/ally-invest-openapi.yml#DELETE /accounts/{id}/orders/{orderId}.json
+    - openapi/_original/ally-invest-openapi.yml#GET /accounts/{id}/orders.json
+    - openapi/_original/ally-invest-openapi.yml#POST /accounts/{id}/orders.json
+  position:
+    path_segment:
+    - holdings
+    properties:
+      id: id
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/ally-invest-openapi.yml#GET /accounts/{id}/holdings.json
+  brokerage_account:
+    path_segment:
+    - accounts
+    properties:
+      id: id
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/ally-invest-openapi.yml#GET /accounts.json
+    - openapi/_original/ally-invest-openapi.yml#GET /accounts/{id}.json
+  watchlist:
+    path_segment:
+    - watchlists
+    properties:
+      id: id
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/ally-invest-openapi.yml#DELETE /watchlists/{id}.json
+    - openapi/_original/ally-invest-openapi.yml#GET /watchlists.json
+    - openapi/_original/ally-invest-openapi.yml#GET /watchlists/{id}.json
+    - openapi/_original/ally-invest-openapi.yml#POST /watchlists.json

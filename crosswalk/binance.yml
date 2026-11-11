@@ -1,0 +1,79 @@
+provider: binance
+apis_io: https://apis.io/providers/binance/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - order
+    - openorders
+    - orders
+    properties:
+      id:
+      - orderId
+      - clientOrderId
+      type: type
+      quantity:
+      - amount
+      - origQty
+      price:
+      - price
+      - avgPrice
+      side: side
+      symbol: symbol
+      time_in_force: timeInForce
+      created_at:
+      - createTime
+      - time
+      stop_price: stopPrice
+      filled_quantity:
+      - executedQty
+      - cumQty
+      updated_at: updateTime
+      reduce_only: reduceOnly
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/binance-algo-trading-openapi.yml#DELETE /sapi/v1/algo/spot/order
+    - openapi/_original/binance-algo-trading-openapi.yml#GET /sapi/v1/algo/spot/openOrders
+    - openapi/_original/binance-coin-margined-futures-openapi.yml#DELETE /dapi/v1/order
+    - openapi/_original/binance-coin-margined-futures-openapi.yml#GET /dapi/v1/openOrders
+    - openapi/_original/binance-coin-margined-futures-openapi.yml#GET /dapi/v1/order
+  fill:
+    path_segment:
+    - mytrades
+    properties:
+      order_id: orderId
+      price: price
+      id: id
+      quantity: qty
+      symbol: symbol
+      executed_at: time
+      fee: commission
+    core_coverage: 0.875
+    evidence:
+    - openapi/_original/binance-spot-trading-openapi.yml#GET /api/v3/myTrades
+  position:
+    path_segment:
+    - position
+    properties:
+      quantity: quantity
+      symbol: symbol
+      current_price: markPrice
+      unrealized_pnl: unrealizedPNL
+      side: side
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/binance-european-options-openapi.yml#GET /eapi/v1/position
+    - openapi/_original/binance-simple-earn-openapi.yml#GET /sapi/v1/simple-earn/flexible/position
+  brokerage_account:
+    path_segment:
+    - account
+    properties:
+      type: accountType
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/binance-coin-margined-futures-openapi.yml#GET /dapi/v1/account
+    - openapi/_original/binance-european-options-openapi.yml#GET /eapi/v1/account
+    - openapi/_original/binance-margin-trading-openapi.yml#GET /sapi/v1/margin/account
+    - openapi/_original/binance-portfolio-margin-openapi.yml#GET /papi/v1/account
+    - openapi/_original/binance-simple-earn-openapi.yml#GET /sapi/v1/simple-earn/account

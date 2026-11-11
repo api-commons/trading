@@ -1,0 +1,28 @@
+provider: gmx
+apis_io: https://apis.io/providers/gmx/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - orders
+    properties:
+      type: orderType
+      stop_price: triggerPrice
+      account_id: account
+    core_coverage: 0.222
+    evidence:
+    - openapi/_original/openapi.json#GET /orders
+    - openapi/_original/openapi.json#GET /orders/{key}
+  position:
+    path_segment:
+    - positions
+    properties:
+      average_cost: entryPrice
+      account_id: account
+      current_price: markPrice
+      unrealized_pnl: pnl
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/openapi.json#GET /positions
+    - openapi/_original/openapi.json#GET /positions/{key}

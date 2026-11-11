@@ -1,0 +1,83 @@
+provider: drivewealth
+apis_io: https://apis.io/providers/drivewealth/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - orders
+    properties:
+      id:
+      - orderID
+      - orderId
+      - clientOrderID
+      - id
+      type:
+      - orderType
+      - type
+      quantity: quantity
+      price:
+      - limitPrice
+      - price
+      side: side
+      symbol:
+      - symbol
+      - ISIN
+      - instrumentID
+      time_in_force: timeInForce
+      created_at: created
+      stop_price: stopPrice
+      account_id: accountID
+      filled_quantity:
+      - cumQty
+      - cumulativeQuantity
+      average_fill_price:
+      - averagePrice
+      - avgPx
+      currency: currency
+      status: orderStatus
+      user_id: userID
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/drivewealth-rest-openapi.yml#GET /accounts/{accountID}/summary/orders
+    - openapi/_original/drivewealth-rest-openapi.yml#GET /orders/{orderID}
+    - openapi/_original/drivewealth-rest-openapi.yml#GET /users/{userID}/managed/orders
+    - openapi/_original/drivewealth-rest-openapi.yml#PATCH /orders/{orderID}
+    - openapi/_original/drivewealth-rest-openapi.yml#POST /orders
+  position:
+    path_segment:
+    - positions
+    properties:
+      symbol: instrument
+      account_id: accountID
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/drivewealth-rest-openapi.yml#GET /accounts/{accountID}/options/positions
+    - openapi/_original/drivewealth-rest-openapi.yml#GET /accounts/{accountID}/summary/positions
+  brokerage_account:
+    path_segment:
+    - accounts
+    properties:
+      type: accountType
+      id: id
+      account_number: accountNo
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/drivewealth-rest-openapi.yml#GET /accounts/{accountID}
+    - openapi/_original/drivewealth-rest-openapi.yml#GET /users/{userID}/accounts
+    - openapi/_original/drivewealth-rest-openapi.yml#PATCH /accounts/{accountID}
+    - openapi/_original/drivewealth-rest-openapi.yml#POST /accounts
+  portfolio:
+    path_segment:
+    - portfolios
+    - portfolio
+    properties:
+      name: name
+      id: id
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/drivewealth-rest-openapi.yml#GET /accounts/{accountID}/portfolio
+    - openapi/_original/drivewealth-rest-openapi.yml#GET /managed/portfolios/{portfolioID}
+    - openapi/_original/drivewealth-rest-openapi.yml#GET /users/{userID}/managed/portfolio
+    - openapi/_original/drivewealth-rest-openapi.yml#PATCH /managed/portfolios/{portfolioID}
+    - openapi/_original/drivewealth-rest-openapi.yml#POST /managed/portfolios

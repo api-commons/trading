@@ -1,0 +1,60 @@
+aid: common-trading
+name: Trading
+type: Common
+description: 'The common Trading vocabulary, distilled from the harvested OpenAPI of 174 providers in APIs.io: shared
+  operations, JSON Schema per concept with measured adoption, and a crosswalk from the common names to each provider''s
+  own.'
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+- Application Programming Interface
+- API
+- Trading
+- Brokerage
+- Investing
+- Crypto Exchange
+- Common Schema
+created: '2026-11-10'
+modified: '2026-11-10'
+url: https://raw.githubusercontent.com/api-commons/trading/main/apis.yml
+specificationVersion: '0.20'
+apis:
+- aid: common-trading:trading
+  name: Common Trading Interface
+  description: The Trading interface the market already shares, measured.
+  humanURL: https://github.com/api-commons/trading
+  tags:
+  - Trading
+  - Brokerage
+  properties:
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/api-commons/trading/main/openapi.yml
+  - type: Profile
+    url: https://raw.githubusercontent.com/api-commons/trading/main/profile.yml
+  - type: Adopters
+    url: https://raw.githubusercontent.com/api-commons/trading/main/adopters.yml
+  - type: Rules
+    url: https://raw.githubusercontent.com/api-commons/schema-commons/main/ruleset/schema-commons-naming.yaml
+  - type: JSONSchema
+    name: trade_order
+    url: https://raw.githubusercontent.com/api-commons/trading/main/schema/trade_order.json
+  - type: JSONSchema
+    name: fill
+    url: https://raw.githubusercontent.com/api-commons/trading/main/schema/fill.json
+  - type: JSONSchema
+    name: position
+    url: https://raw.githubusercontent.com/api-commons/trading/main/schema/position.json
+  - type: JSONSchema
+    name: brokerage_account
+    url: https://raw.githubusercontent.com/api-commons/trading/main/schema/brokerage_account.json
+  - type: JSONSchema
+    name: portfolio
+    url: https://raw.githubusercontent.com/api-commons/trading/main/schema/portfolio.json
+  - type: JSONSchema
+    name: watchlist
+    url: https://raw.githubusercontent.com/api-commons/trading/main/schema/watchlist.json
+common:
+- type: License
+  url: https://raw.githubusercontent.com/api-commons/trading/main/LICENSE
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

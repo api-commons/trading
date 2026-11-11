@@ -1,0 +1,38 @@
+provider: upstox
+apis_io: https://apis.io/providers/upstox/
+context: trading
+generated: '2026-11-10'
+concepts:
+  trade_order:
+    path_segment:
+    - orders
+    properties:
+      id:
+      - id
+      - order_id
+      quantity:
+      - amount
+      - quantity
+      price: price
+      symbol: symbol
+      created_at: created_at
+      average_fill_price: average_price
+      status: order_status
+    core_coverage: 0.556
+    evidence:
+    - openapi/_original/upstox-api-docs.json#DELETE /v2/ipos/orders/{order_id}
+    - openapi/_original/upstox-api-docs.json#GET /v2/ipos/orders
+    - openapi/_original/upstox-api-docs.json#GET /v2/ipos/orders/{order_id}
+    - openapi/_original/upstox-api-docs.json#GET /v2/mf/orders
+    - openapi/_original/upstox-api-docs.json#GET /v2/mf/orders/{order_id}
+  position:
+    path_segment:
+    - holdings
+    properties:
+      quantity: quantity
+      average_cost: average_price
+      current_price: last_price
+      unrealized_pnl: pnl
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/upstox-api-docs.json#GET /v2/mf/holdings
