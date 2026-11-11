@@ -19,7 +19,7 @@ generated. Every number below is a count of providers.
 | portfolio | 7 | 7 | name 71%, account_id 57%, id 57% | portfolios 6, portfolio 3 |
 | watchlist | 8 | 6 | id 83%, name 83%, created_at 50%, total_items 50% | watchlists 8 |
 
-Cohort: 174 providers with harvested OpenAPI, 51 crosswalks. Of the providers exposing a trade_order: 92% create, 92% list, 71% fetch, 34% update, 55% delete. Generated 2026-11-10 by build.py.
+Cohort: 174 providers with harvested OpenAPI, 51 crosswalks. Of the providers exposing a trade_order: 92% create, 92% list, 71% fetch, 34% update, 55% delete. Generated 2026-11-11 by build.py.
 <!-- /commons:summary -->
 
 Shares are of the providers with a readable resource schema for that concept. The
